@@ -1,0 +1,18 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  release:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: yarn install
+            - run: yarn build
+            - run: npx semantic-release
+workflows:
+  new-release:
+    jobs:
+      - release
