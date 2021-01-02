@@ -1,7 +1,7 @@
 # plex-sdk
 
-![npm](https://img.shields.io/npm/v/plex-sdk?color=red&logo=npm&style=for-the-badge)
-![CircleCI](https://img.shields.io/circleci/build/bb/nass600/plex-sdk?logo=circleci\&style=for-the-badge\&token=f0efd5cc1eba9f628e0c033f3400fc7464871111)
+[![npm](https://img.shields.io/npm/v/plex-sdk?color=red&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/plex-sdk)
+[![CircleCI](https://img.shields.io/circleci/build/gh/nass600/plex-sdk?logo=circleci\&style=for-the-badge)](https://app.circleci.com/pipelines/github/nass600)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-relesase)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge\&logo=github)](http://commitizen.github.io/cz-cli/)
 
