@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/nass600/plex-sdk/compare/1.0.0...1.0.1) (2021-01-02)
+
+### Bug Fixes
+
+-   removed moment ([a47aa14](https://github.com/nass600/plex-sdk/commit/a47aa142a946dc812b2ec30d118f16651854c3f2))
+
 # 1.0.0 (2021-01-02)
 
 ### Bug Fixes
