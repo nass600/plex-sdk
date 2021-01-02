@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/nass600/plex-sdk/compare/1.0.1...1.0.2) (2021-01-02)
+
+### Bug Fixes
+
+-   fixed badges in readme ([c002f6b](https://github.com/nass600/plex-sdk/commit/c002f6b0455762ac5a0ecdffe845a259697ea545))
+
 ## [1.0.1](https://github.com/nass600/plex-sdk/compare/1.0.0...1.0.1) (2021-01-02)
 
 ### Bug Fixes
