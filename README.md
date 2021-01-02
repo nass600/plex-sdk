@@ -54,7 +54,7 @@ Please make sure to update tests as appropriate.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/nass600/winston/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/nass600/plex-sdk/tags).
 
 ## Changelog
 

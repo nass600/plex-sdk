@@ -18,9 +18,7 @@ module.exports = {
         '@semantic-release/changelog',
         ['@semantic-release/npm', { npmPublish: true }],
         '@semantic-release/git',
-        ['@semantic-release/github', {
-            assets: 'build/*.zip'
-        }]
+        '@semantic-release/github'
     ],
     // eslint-disable-next-line no-template-curly-in-string
     tagFormat: '${version}'
