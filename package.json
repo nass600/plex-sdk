@@ -20,7 +20,7 @@
         "prebuild": "yarn type-check",
         "build": "rollup -c",
         "build:watch": "rollup -c -w",
-        "docs": "typedoc ./src",
+        "docs": "typedoc",
         "prepublishOnly": "yarn build && yarn docs",
         "postversion": "yarn lint:md"
     },
