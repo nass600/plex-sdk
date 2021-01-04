@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/nass600/plex-sdk/compare/1.0.2...1.0.3) (2021-01-04)
+
+### Bug Fixes
+
+-   cleaned up documentation files ([1c9650c](https://github.com/nass600/plex-sdk/commit/1c9650cabf2b46e934b73b5758fa4c9915c7eda1))
+
 ## [1.0.2](https://github.com/nass600/plex-sdk/compare/1.0.1...1.0.2) (2021-01-02)
 
 ### Bug Fixes

@@ -1,6 +1,6 @@
 {
     "name": "plex-sdk",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Plex Javascript SDK",
     "repository": "git@github.com:nass600/plex-sdk",
     "author": "Ignacio Velazquez <ivelazquez85@gmail.com>",
