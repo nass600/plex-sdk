@@ -1,0 +1,12 @@
+.*
+build
+commitlint.config.js
+jest.config.js
+node_modules
+release.config.js
+rollup.config.js
+src
+tests
+tsconfig*.json
+typedoc.json
+yarn.error

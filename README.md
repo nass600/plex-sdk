@@ -1,6 +1,7 @@
 # plex-sdk
 
 [![npm](https://img.shields.io/npm/v/plex-sdk?color=red&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/plex-sdk)
+![npm](https://img.shields.io/npm/dm/plex-sdk?color=blue&logo=npm&style=for-the-badge)
 [![CircleCI](https://img.shields.io/circleci/build/gh/nass600/plex-sdk?logo=circleci\&style=for-the-badge)](https://app.circleci.com/pipelines/github/nass600)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-relesase)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge\&logo=github)](http://commitizen.github.io/cz-cli/)
@@ -22,6 +23,33 @@ yarn add plex-sdk
 ```
 
 ## Usage
+
+### Plex API
+
+```typescript
+import { Plex } from 'plex-sdk'
+
+export const plex = new Plex({
+    clientIdentifier: 'c2877b28-1806-42c1-eeea-ac4bc2b9a93d',
+    device: 'Chrome',
+    product: 'Your product name',
+    version: '1.0.0'
+})
+
+plex.tv.users.signIn(username, password).then((user: User) => {
+    if (!user.authToken) {
+        return Promise.reject(new Error('Login request didn\'t carry a valid token'))
+    }
+
+    plex.setAuthorization(user.authToken)
+
+    return plex.tv.resources.all()
+}).then((resources: Resource[]) => {
+    // do something with the resources
+})
+```
+
+### PMS API
 
 ```typescript
 import { Plex } from 'plex-sdk'
