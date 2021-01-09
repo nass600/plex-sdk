@@ -10,6 +10,7 @@ module.exports = {
                 { type: 'refactor', release: 'patch' },
                 { type: 'style', release: 'patch' },
                 { type: 'revert', release: 'patch' },
+                { type: 'test', release: 'patch' },
                 { breaking: true, release: 'major' },
                 { revert: true, release: 'patch' }
             ]

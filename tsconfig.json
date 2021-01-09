@@ -16,18 +16,20 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "removeComments": true,
+        "resolveJsonModule": true,
         "rootDirs": ["src"],
         "baseUrl": ".",
         "paths": {
             "@client": ["src/client"],
             "@errors": ["src/errors"],
             "@models": ["src/models"],
-            "@utils": ["src/utils"]
+            "@utils": ["src/utils"],
+            "@types": ["src/types"]
         }
     },
     "outDir": "build/lib",
     "target": "es5",
     "lib": ["es5", "es6", "es7", "esnext", "dom"],
-    "include": ["src/**/*", "**/__tests__"],
+    "include": ["src/**/*", "**/__tests__", "tests/**/*"],
     "exclude": ["node_modules"]
 }
