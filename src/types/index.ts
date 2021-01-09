@@ -1,3 +1,5 @@
+export * from './api'
+
 export enum SectionType {
     MOVIE = 'movie',
     SHOW = 'show',

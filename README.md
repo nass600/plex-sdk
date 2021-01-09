@@ -49,7 +49,7 @@ plex.tv.users.signIn(username, password).then((user: User) => {
 })
 ```
 
-### PMS API
+### Plex Media Server API
 
 ```typescript
 import { Plex } from 'plex-sdk'

@@ -1,35 +1,8 @@
 import { ApiClient } from '../..'
-
-/* eslint-disable camelcase */
-export interface User {
-    id: number;
-    uuid: string;
-    email: string;
-    joined_at: string;
-    username: string;
-    title: string;
-    thumb: string;
-    hasPassword: boolean;
-    authToken: string;
-    authentication_token: string;
-    subscription: {
-        active: true;
-        status: string;
-        plan: string;
-        features: string[];
-    };
-    roles: {
-        roles: string[];
-    };
-    entitlements: string[];
-    confirmedAt: string;
-    forumId: number;
-    rememberMe: boolean;
-}
-/* eslint-enable camelcase */
+import { User } from '@types'
 
 export class Users {
-    private apiClient: ApiClient
+    apiClient: ApiClient
 
     public constructor (client: ApiClient) {
         this.apiClient = client

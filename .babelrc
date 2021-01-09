@@ -18,7 +18,8 @@
                     "@client": "./src/client",
                     "@errors": "./src/errors",
                     "@models": "./src/models",
-                    "@utils": "./src/utils"
+                    "@utils": "./src/utils",
+                    "@types": "./src/types"
                 }
             }
         ]
