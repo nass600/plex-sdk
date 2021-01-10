@@ -1,10 +1,11 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import { PlexHeader } from '@types'
 
-export interface PlexHeaders {
+export interface Headers {
     [key: string]: string;
 }
 
-export enum PlexRequestMethod {
+export enum RequestMethod {
     DELETE = 'DELETE',
     GET = 'GET',
     POST = 'POST',
@@ -13,9 +14,9 @@ export enum PlexRequestMethod {
 
 export class ApiClient {
     client: AxiosInstance;
-    token: string;
+    token?: string;
 
-    constructor (baseUrl: string, headers?: PlexHeaders) {
+    constructor (baseUrl: string, headers?: Headers) {
         this.client = this.createClient(
             baseUrl,
             headers
@@ -25,11 +26,11 @@ export class ApiClient {
     get<T> (
         endpoint: string,
         params?: Record<string, unknown>,
-        headers?: PlexHeaders,
+        headers?: Headers,
         paramsSerializer?: (params: Record<string, unknown>) => string
     ): Promise<T> {
         return this.request<T>(
-            PlexRequestMethod.GET,
+            RequestMethod.GET,
             endpoint,
             params,
             undefined,
@@ -38,12 +39,17 @@ export class ApiClient {
         )
     }
 
-    delete<T> (endpoint: string, params?: Record<string, unknown>, headers?: PlexHeaders): Promise<T> {
+    delete<T> (
+        endpoint: string,
+        body?: Record<string, unknown>,
+        params?: Record<string, unknown>,
+        headers?: Headers
+    ): Promise<T> {
         return this.request<T>(
-            PlexRequestMethod.DELETE,
+            RequestMethod.DELETE,
             endpoint,
             params,
-            undefined,
+            body,
             headers
         )
     }
@@ -52,10 +58,10 @@ export class ApiClient {
         endpoint: string,
         body?: Record<string, unknown>,
         params?: Record<string, unknown>,
-        headers?: PlexHeaders
+        headers?: Headers
     ): Promise<T> {
         return this.request<T>(
-            PlexRequestMethod.POST,
+            RequestMethod.POST,
             endpoint,
             params,
             body,
@@ -67,10 +73,10 @@ export class ApiClient {
         endpoint: string,
         body?: Record<string, unknown>,
         params?: Record<string, unknown>,
-        headers?: PlexHeaders
+        headers?: Headers
     ): Promise<T> {
         return this.request<T>(
-            PlexRequestMethod.PUT,
+            RequestMethod.PUT,
             endpoint,
             params,
             body,
@@ -82,18 +88,22 @@ export class ApiClient {
         return this.token
     }
 
-    setAuthorization (token: string): void {
+    setAuthorization (token?: string): void {
         this.token = token
 
-        this.client.defaults.headers.common['X-Plex-Token'] = this.token
+        if (this.token) {
+            this.client.defaults.headers.common[PlexHeader.TOKEN] = this.token
+        } else {
+            delete this.client.defaults.headers.common[PlexHeader.TOKEN]
+        }
     }
 
     private request<T> (
-        method: PlexRequestMethod,
+        method: RequestMethod,
         url: string,
         params?: Record<string, unknown>,
         data?: Record<string, unknown>,
-        headers: PlexHeaders = {},
+        headers: Headers = {},
         paramsSerializer?: (params: Record<string, unknown>) => string
     ): Promise<T> {
         const requestConfig: AxiosRequestConfig = {
@@ -108,7 +118,7 @@ export class ApiClient {
         return this.client.request<T>(requestConfig)
     }
 
-    private createClient (apiUrl: string, headers?: PlexHeaders): AxiosInstance {
+    private createClient (apiUrl: string, headers?: Headers): AxiosInstance {
         const baseURL = apiUrl.charAt(apiUrl.length - 1) === '/' ? apiUrl : `${apiUrl}/`
         const client = axios.create({ baseURL })
 
@@ -118,19 +128,19 @@ export class ApiClient {
         }
 
         if (headers?.clientIdentifier) {
-            client.defaults.headers.common['X-Plex-Client-Identifier'] = headers.clientIdentifier
+            client.defaults.headers.common[PlexHeader.CLIENT_IDENTIFIER] = headers.clientIdentifier
         }
 
         if (headers?.device) {
-            client.defaults.headers.common['X-Plex-Device'] = headers.device
+            client.defaults.headers.common[PlexHeader.DEVICE] = headers.device
         }
 
         if (headers?.product) {
-            client.defaults.headers.common['X-Plex-Product'] = headers.product
+            client.defaults.headers.common[PlexHeader.PRODUCT] = headers.product
         }
 
         if (headers?.version) {
-            client.defaults.headers.common['X-Plex-Version'] = headers.version
+            client.defaults.headers.common[PlexHeader.VERSION] = headers.version
         }
 
         client.interceptors.response.use(

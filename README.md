@@ -6,7 +6,7 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-relesase)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge\&logo=github)](http://commitizen.github.io/cz-cli/)
 
-> Typescript SDK for Plex API
+> Typescript SDK for Plex and Plex Media Server APIs
 
 ## Installation
 
@@ -26,51 +26,55 @@ yarn add plex-sdk
 
 ### Plex API
 
+The Plex SDK provides an interface with the Plex official API.
+
 ```typescript
-import { Plex } from 'plex-sdk'
+import { Plex, User, Resource } from 'plex-sdk'
 
-export const plex = new Plex({
-    clientIdentifier: 'c2877b28-1806-42c1-eeea-ac4bc2b9a93d',
-    device: 'Chrome',
-    product: 'Your product name',
-    version: '1.0.0'
-})
+const plex = new Plex(
+    'c2877b28-1806-42c1-eeea-ac4bc2b9a93d', // uuid.v4
+    {
+        device: 'Chrome',
+        product: 'Your product name',
+        version: '1.0.0'
+    }
+)
 
-plex.tv.users.signIn(username, password).then((user: User) => {
+plex.users.signIn(username, password).then((user: User) => {
     if (!user.authToken) {
         return Promise.reject(new Error('Login request didn\'t carry a valid token'))
     }
 
     plex.setAuthorization(user.authToken)
 
-    return plex.tv.resources.all()
+    return plex.resources.all()
 }).then((resources: Resource[]) => {
     // do something with the resources
 })
 ```
 
-### Plex Media Server API
+### Plex Media Server API (PMS)
+
+The Plex Media Server SDK (PMS) provides an interface with your own server where you installed Plex Media Server.
 
 ```typescript
-import { Plex } from 'plex-sdk'
+import { PMS, Section } from 'plex-sdk'
 
-export const plex = new Plex({
-    clientIdentifier: 'c2877b28-1806-42c1-eeea-ac4bc2b9a93d',
-    device: 'Chrome',
-    product: 'Your product name',
-    version: '1.0.0'
-})
+const pms = new PMS(
+    'https://your-plex-media-server.com:32400',
+    'tokenObtainedFromPlexClient'
+)
 
-plex.tv.users.signIn(username, password).then((user: User) => {
-    if (!user.authToken) {
-        return Promise.reject(new Error('Login request didn\'t carry a valid token'))
-    }
+// If the token was not set in the constructor
+pms.setAuthorization('tokenObtainedFromPlexClient')
 
-    plex.setAuthorization(user.authToken)
+pms.library.allSections().then((response: AllSectionsResponse) => {
+    // Do something with the Sections
 
-    return plex.tv.resources.all()
-}).then((resources: Resource[]) => {
-    // do something with the resources
+    return pms.library.allSectionItems(response.MediaContainer.Directory[0].key)
+}).then((response: AllSectionItemsResponse) => {
+    // list section items (movies, tv shows...)
+    console.log(response.MediaContainer.Metadata)
 })
 ```
 

@@ -1,4 +1,5 @@
-import { ApiClient, HubsMediaContainer } from '../../..'
+import { ApiClient } from '@client'
+import { HubsMediaContainer } from '@types'
 
 export interface AllHubsResponse {
     MediaContainer: HubsMediaContainer;
@@ -9,7 +10,7 @@ export interface HubSearchResponse {
 }
 
 export class Hubs {
-    private apiClient: ApiClient
+    apiClient: ApiClient
 
     public constructor (client: ApiClient) {
         this.apiClient = client

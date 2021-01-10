@@ -1,0 +1,284 @@
+{
+    "MediaContainer": {
+        "size": 2,
+        "allowSync": true,
+        "identifier": "com.plexapp.plugins.library",
+        "Hub": [
+            {
+                "hubKey": "/library/metadata/2349,2613",
+                "key": "/hubs/home/continueWatching",
+                "title": "Continue Watching",
+                "type": "mixed",
+                "hubIdentifier": "home.continue",
+                "size": 2,
+                "more": false,
+                "style": "hero",
+                "promoted": true,
+                "Metadata": [
+                    {
+                        "librarySectionID": 2,
+                        "ratingKey": "2349",
+                        "key": "/library/metadata/2349",
+                        "guid": "com.plexapp.agents.themoviedb://118340?lang=es",
+                        "studio": "Marvel Studios",
+                        "type": "movie",
+                        "title": "Guardianes de la galaxia",
+                        "librarySectionTitle": "Movies",
+                        "librarySectionKey": "/library/sections/2",
+                        "originalTitle": "Guardians of the Galaxy",
+                        "rating": 8.0,
+                        "viewOffset": 1673520,
+                        "viewCount": 31,
+                        "lastViewedAt": 1610157588,
+                        "year": 2014,
+                        "tagline": "Todos los héroes empiezan en alguna parte",
+                        "thumb": "/library/metadata/2349/thumb/1610271695",
+                        "art": "/library/metadata/2349/art/1610271695",
+                        "duration": 7251243,
+                        "originallyAvailableAt": "2014-08-14",
+                        "addedAt": 1417265150,
+                        "updatedAt": 1610271695,
+                        "Media": [
+                            {
+                                "id": 2237,
+                                "duration": 7251243,
+                                "bitrate": 5745,
+                                "width": 1920,
+                                "height": 800,
+                                "aspectRatio": 2.35,
+                                "audioChannels": 6,
+                                "audioCodec": "ac3",
+                                "videoCodec": "h264",
+                                "videoResolution": "1080",
+                                "container": "mkv",
+                                "videoFrameRate": "24p",
+                                "videoProfile": "main",
+                                "Part": [
+                                    {
+                                        "id": 3037,
+                                        "key": "/library/parts/3037/1417265150/file.mkv",
+                                        "duration": 7251243,
+                                        "file": "/volume1/Movies/Guardianes de la galaxia (2014).mkv",
+                                        "size": 5209551013,
+                                        "container": "mkv",
+                                        "videoProfile": "main"
+                                    }
+                                ]
+                            }
+                        ],
+                        "Genre": [
+                            {
+                                "tag": "Ciencia ficción"
+                            },
+                            {
+                                "tag": "Fantasía"
+                            },
+                            {
+                                "tag": "Aventura"
+                            }
+                        ],
+                        "Director": [
+                            {
+                                "tag": "James Gunn"
+                            }
+                        ],
+                        "Writer": [
+                            {
+                                "tag": "Nicole Perlman"
+                            },
+                            {
+                                "tag": "James Gunn"
+                            }
+                        ],
+                        "Country": [
+                            {
+                                "tag": "USA"
+                            }
+                        ],
+                        "Collection": [
+                            {
+                                "tag": "Marvel Cinematic Universe"
+                            },
+                            {
+                                "tag": "Guardianes de la galaxia"
+                            }
+                        ],
+                        "Role": [
+                            {
+                                "tag": "Chris Pratt"
+                            },
+                            {
+                                "tag": "Zoe Saldana"
+                            },
+                            {
+                                "tag": "Dave Bautista"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "hubKey": "/library/metadata/80053,79971",
+                "key": "/hubs/home/onDeck",
+                "title": "On Deck",
+                "type": "episode",
+                "hubIdentifier": "home.ondeck",
+                "size": 2,
+                "more": false,
+                "style": "shelf",
+                "promoted": true,
+                "Metadata": [
+                    {
+                        "librarySectionID": 1,
+                        "ratingKey": "80053",
+                        "key": "/library/metadata/80053",
+                        "parentRatingKey": "80002",
+                        "grandparentRatingKey": "62006",
+                        "guid": "com.plexapp.agents.themoviedb://63639/5/5?lang=es",
+                        "parentGuid": "com.plexapp.agents.themoviedb://63639/5?lang=es",
+                        "grandparentGuid": "com.plexapp.agents.themoviedb://63639?lang=es",
+                        "type": "episode",
+                        "title": "Desamparados",
+                        "grandparentKey": "/library/metadata/62006",
+                        "parentKey": "/library/metadata/80002",
+                        "librarySectionTitle": "TV Shows",
+                        "librarySectionKey": "/library/sections/1",
+                        "grandparentTitle": "The Expanse",
+                        "parentTitle": "Season 5",
+                        "contentRating": "es/12",
+                        "index": 5,
+                        "parentIndex": 5,
+                        "year": 2020,
+                        "thumb": "/library/metadata/80053/thumb/1610118213",
+                        "art": "/library/metadata/62006/art/1610118216",
+                        "parentThumb": "/library/metadata/80002/thumb/1610118215",
+                        "grandparentThumb": "/library/metadata/62006/thumb/1610118216",
+                        "grandparentArt": "/library/metadata/62006/art/1610118216",
+                        "duration": 2945472,
+                        "originallyAvailableAt": "2020-12-30",
+                        "addedAt": 1610118146,
+                        "updatedAt": 1610118213,
+                        "Media": [
+                            {
+                                "id": 78580,
+                                "duration": 2945472,
+                                "bitrate": 8717,
+                                "width": 1920,
+                                "height": 1080,
+                                "aspectRatio": 1.78,
+                                "audioChannels": 6,
+                                "audioCodec": "eac3",
+                                "videoCodec": "h264",
+                                "videoResolution": "1080",
+                                "container": "mkv",
+                                "videoFrameRate": "24p",
+                                "videoProfile": "high",
+                                "Part": [
+                                    {
+                                        "id": 80736,
+                                        "key": "/library/parts/80736/1610118049/file.mkv",
+                                        "duration": 2945472,
+                                        "file": "/volume1/TV Shows/The Expanse/Season 5/The Expanse - s05e05.mkv",
+                                        "size": 3210334083,
+                                        "container": "mkv",
+                                        "videoProfile": "high",
+                                        "Stream": [
+                                            {
+                                                "id": 121955,
+                                                "streamType": 1,
+                                                "default": true,
+                                                "codec": "h264",
+                                                "index": 0,
+                                                "bitrate": 7437,
+                                                "language": "English",
+                                                "languageCode": "eng",
+                                                "bitDepth": 8,
+                                                "chromaLocation": "left",
+                                                "chromaSubsampling": "4:2:0",
+                                                "codedHeight": "1088",
+                                                "codedWidth": "1920",
+                                                "colorPrimaries": "bt709",
+                                                "colorRange": "tv",
+                                                "colorSpace": "bt709",
+                                                "colorTrc": "bt709",
+                                                "frameRate": 23.976,
+                                                "hasScalingMatrix": false,
+                                                "height": 1080,
+                                                "level": 40,
+                                                "profile": "high",
+                                                "refFrames": 4,
+                                                "scanType": "progressive",
+                                                "width": 1920,
+                                                "displayTitle": "1080p (H.264)"
+                                            },
+                                            {
+                                                "id": 121956,
+                                                "streamType": 2,
+                                                "default": true,
+                                                "codec": "eac3",
+                                                "index": 1,
+                                                "channels": 6,
+                                                "bitrate": 640,
+                                                "language": "Español",
+                                                "languageCode": "spa",
+                                                "audioChannelLayout": "5.1(side)",
+                                                "samplingRate": 48000,
+                                                "displayTitle": "Español (EAC3 5.1)"
+                                            },
+                                            {
+                                                "id": 121957,
+                                                "streamType": 2,
+                                                "selected": true,
+                                                "codec": "eac3",
+                                                "index": 2,
+                                                "channels": 6,
+                                                "bitrate": 640,
+                                                "language": "English",
+                                                "languageCode": "eng",
+                                                "audioChannelLayout": "5.1(side)",
+                                                "samplingRate": 48000,
+                                                "displayTitle": "English (EAC3 5.1)"
+                                            },
+                                            {
+                                                "id": 121958,
+                                                "streamType": 3,
+                                                "forced": true,
+                                                "codec": "srt",
+                                                "index": 3,
+                                                "bitrate": 0,
+                                                "language": "Español",
+                                                "languageCode": "spa",
+                                                "displayTitle": "Español Forced (SRT)"
+                                            },
+                                            {
+                                                "id": 121959,
+                                                "streamType": 3,
+                                                "codec": "srt",
+                                                "index": 4,
+                                                "bitrate": 0,
+                                                "language": "Español",
+                                                "languageCode": "spa",
+                                                "displayTitle": "Español (SRT)"
+                                            },
+                                            {
+                                                "id": 121960,
+                                                "streamType": 3,
+                                                "selected": true,
+                                                "codec": "srt",
+                                                "index": 5,
+                                                "bitrate": 0,
+                                                "language": "English",
+                                                "languageCode": "eng",
+                                                "displayTitle": "English (SRT)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
