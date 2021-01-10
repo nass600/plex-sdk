@@ -4,14 +4,19 @@ const { compilerOptions } = require('./tsconfig')
 module.exports = {
     coverageDirectory: '<rootDir>/.reports/jest/coverage',
     collectCoverage: !process.argv.includes('--watch'),
-    collectCoverageFrom: ['src/**/*.ts', '!src/**/__tests__/**/*', '!**/node_modules/**'],
+    collectCoverageFrom: [
+        'src/**/*.ts',
+        '!src/types/**/*',
+        '!src/**/__tests__/**/*',
+        '!**/node_modules/**'
+    ],
     coverageReporters: ['lcov', 'text', 'html'],
     coverageThreshold: {
         global: {
-            statements: 10,
-            branches: 0,
-            functions: 10,
-            lines: 10
+            statements: 80,
+            branches: 60,
+            functions: 80,
+            lines: 80
         }
     },
     moduleFileExtensions: ['ts', 'js', 'json'],
