@@ -1,3 +1,5 @@
+## [1.0.5](https://github.com/nass600/plex-sdk/compare/1.0.4...1.0.5) (2021-01-10)
+
 ## [1.0.4](https://github.com/nass600/plex-sdk/compare/1.0.3...1.0.4) (2021-01-09)
 
 ## [1.0.3](https://github.com/nass600/plex-sdk/compare/1.0.2...1.0.3) (2021-01-04)
