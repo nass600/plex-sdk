@@ -27,8 +27,16 @@ describe('hubs', () => {
     it('Search items successfully', () => {
         const hubs = new Hubs(apiClient)
 
-        return hubs.search('avengers').then(() => {
+        return hubs.search({ query: 'avengers' }).then(() => {
             expect(hubs.apiClient.get).toHaveBeenCalledWith('hubs/search?query=avengers')
+        })
+    })
+
+    it('Search items successfully with optional params', () => {
+        const hubs = new Hubs(apiClient)
+
+        return hubs.search({ query: 'avengers', limit: 2, includeGuids: 1 }).then(() => {
+            expect(hubs.apiClient.get).toHaveBeenCalledWith('hubs/search?query=avengers&limit=2&includeGuids=1')
         })
     })
 })

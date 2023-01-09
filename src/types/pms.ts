@@ -55,6 +55,10 @@ export enum StreamType {
     SUBTITLE = 3
 }
 
+export interface Guid {
+    id: string
+}
+
 export interface VideoStream {
     id: number;
     streamType: StreamType;
@@ -205,6 +209,7 @@ export interface Metadata {
             Stream: Stream[];
         }[];
     }[];
+    Guid?: Guid[]
 }
 
 export interface MetadataMediaContainer extends MediaContainer {
