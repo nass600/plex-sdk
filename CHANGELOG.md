@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/nass600/plex-sdk/compare/2.0.0...2.0.1) (2023-01-09)
+
+### Bug Fixes
+
+-   fixing the release action ([92e5584](https://github.com/nass600/plex-sdk/commit/92e5584e670d1a44aff62f1e3caefa5af9a3c29f))
+
 # [2.0.0](https://github.com/nass600/plex-sdk/compare/1.0.5...2.0.0) (2023-01-09)
 
 ### Features
