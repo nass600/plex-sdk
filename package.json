@@ -1,6 +1,6 @@
 {
     "name": "plex-sdk",
-    "version": "1.0.5",
+    "version": "2.0.0",
     "description": "Typescript SDK for Plex and Plex Media Server APIs",
     "repository": "git@github.com:nass600/plex-sdk",
     "author": "Ignacio Velazquez <ivelazquez85@gmail.com>",

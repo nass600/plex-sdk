@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/nass600/plex-sdk/compare/1.0.5...2.0.0) (2023-01-09)
+
+### Features
+
+-   modified search endpoint to accept optional params ([400e347](https://github.com/nass600/plex-sdk/commit/400e347008c45fc3df77ff624d4f1d9972d4a477))
+
+### BREAKING CHANGES
+
+-   The pms.search function modifies the signature to accept and object, including the
+    query
+
+-   ci: changing to github actions
+
 ## [1.0.5](https://github.com/nass600/plex-sdk/compare/1.0.4...1.0.5) (2021-01-10)
 
 ## [1.0.4](https://github.com/nass600/plex-sdk/compare/1.0.3...1.0.4) (2021-01-09)
