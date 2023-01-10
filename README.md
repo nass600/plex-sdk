@@ -89,6 +89,9 @@ pms.library.allSections().then((response: AllSectionsResponse) => {
     // list section items (movies, tv shows...)
     console.log(response.MediaContainer.Metadata)
 })
+
+const results = await pms.hubs.search({ query: 'Avengers'})
+// Do something with the search results
 ```
 
 ## Contributing
