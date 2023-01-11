@@ -1,4 +1,3 @@
-import clear from 'rollup-plugin-clear'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
@@ -7,6 +6,7 @@ import { babel } from '@rollup/plugin-babel'
 import terser from '@rollup/plugin-terser'
 import json from '@rollup/plugin-json'
 import autoExternal from 'rollup-plugin-auto-external'
+import dts from 'rollup-plugin-dts'
 import path from 'path'
 import fs from 'fs'
 
@@ -40,6 +40,7 @@ const buildConfig = ({es5, minifiedVersion = true, ...config}) => {
             autoExternal(),
             typescript({
                 tsconfig: 'tsconfig.json',
+                sourceMap: true,
                 transformers: [(service) => transformPaths(service.getProgram())]
             }),
             minified && terser(),
@@ -63,7 +64,7 @@ export default async () => {
         ...buildConfig({
             es5: false,
             output: {
-                file: `dist/esm/${pkg.name}.js`,
+                file: `${ouputDir}/esm/${pkg.name}.js`,
                 format: "esm",
                 generatedCode: {
                     constBinding: true
@@ -74,9 +75,29 @@ export default async () => {
         ...buildConfig({
             es5: false,
             output: {
-                file: `dist/${pkg.name}.js`,
+                file: `${ouputDir}/${pkg.name}.js`,
                 format: "cjs",
             }
-        })
+        }),
+        // Types
+        {
+            input,
+            output: {
+                file: `${ouputDir}/${pkg.name}.d.ts`,
+                format: "es",
+                sourcemap: false
+            },
+            plugins: [
+                typescript({
+                    tsconfig: 'tsconfig.json',
+                    sourceMap: false,
+                    declaration: true,
+                    emitDeclarationOnly: true,
+                    declarationDir: ".",
+                    transformers: [(service) => transformPaths(service.getProgram())]
+                }),
+                dts.default()
+            ]
+        }
     ]
 }
