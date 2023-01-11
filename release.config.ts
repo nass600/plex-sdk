@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     plugins: [
         '@semantic-release/release-notes-generator',
         '@semantic-release/changelog',

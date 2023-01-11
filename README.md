@@ -1,9 +1,9 @@
 # plex-sdk
 
-[![npm](https://img.shields.io/npm/v/plex-sdk?color=red&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/plex-sdk)
-[![npm](https://img.shields.io/npm/dm/plex-sdk?color=blue&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/plex-sdk)
-[![npm](https://img.shields.io/bundlephobia/min/plex-sdk?logo=npm&style=for-the-badge)]((https://www.npmjs.com/package/plex-sdk))
-[![Jest](https://img.shields.io/github/actions/workflow/status/nass600/plex-sdk/test.yml?label=tests&logo=jest&style=for-the-badge)](https://github.com/nass600/plex-sdk/actions/workflows/test.yml)
+[![npm](https://img.shields.io/npm/v/plex-sdk?color=red\&logo=npm\&style=for-the-badge)](https://www.npmjs.com/package/plex-sdk)
+[![npm](https://img.shields.io/npm/dm/plex-sdk?color=blue\&logo=npm\&style=for-the-badge)](https://www.npmjs.com/package/plex-sdk)
+[![npm](https://img.shields.io/bundlephobia/min/plex-sdk?logo=npm\&style=for-the-badge)](\(https://www.npmjs.com/package/plex-sdk\))
+[![Jest](https://img.shields.io/github/actions/workflow/status/nass600/plex-sdk/test.yml?label=tests\&logo=jest\&style=for-the-badge)](https://github.com/nass600/plex-sdk/actions/workflows/test.yml)
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-relesase)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge\&logo=github)](http://commitizen.github.io/cz-cli/)
@@ -114,4 +114,4 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 
 ## Authors
 
--   [Ignacio Velazquez](https://ignaciovelazquez.es)
+*   [Ignacio Velazquez](https://ignaciovelazquez.es)

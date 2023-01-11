@@ -1,5 +1,5 @@
-import { ApiClient } from '@client'
-import { HubsMediaContainer } from '@types'
+import { ApiClient } from '@/client/ApiClient'
+import { HubsMediaContainer } from '@/types'
 
 export interface AllHubsResponse {
     MediaContainer: HubsMediaContainer;

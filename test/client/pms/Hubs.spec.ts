@@ -1,8 +1,8 @@
-import { ApiClient } from '@client'
-import * as mockAll from '../__fixtures__/all.200.json'
-import { Hubs } from '../Hubs'
+import { ApiClient } from '@/client/ApiClient'
+import * as mockAll from '@fixtures/hubs.all.200.json'
+import { Hubs } from '@/client/pms'
 
-jest.mock('@client', () => ({
+jest.mock('@/client/ApiClient', () => ({
     ApiClient: jest.fn().mockImplementation(() => ({
         get: jest.fn().mockResolvedValue({ data: mockAll }),
         setAuthorization: jest.fn()

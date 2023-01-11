@@ -1,4 +1,4 @@
-import { PMS } from '../PMS'
+import { PMS } from '@/client/pms/PMS'
 
 const fakeServer = 'https://fake-server.com:32400'
 const fakeToken = 'fakeToken'

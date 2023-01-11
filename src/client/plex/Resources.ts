@@ -1,5 +1,5 @@
-import { ApiClient } from '@client'
-import { Resource } from '@types'
+import { ApiClient } from '@/client/ApiClient'
+import { Resource } from '@/types'
 
 export class Resources {
     apiClient: ApiClient

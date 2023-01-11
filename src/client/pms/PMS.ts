@@ -1,6 +1,6 @@
-import { Library } from './library'
-import { Hubs } from './hubs'
-import { ApiClient } from '@client'
+import { Hubs } from '@/client/pms/Hubs'
+import { Library } from '@/client/pms/Library'
+import { ApiClient } from '@/client/ApiClient'
 
 export class PMS {
     private apiClient: ApiClient

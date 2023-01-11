@@ -15,11 +15,8 @@
             {
                 "root": ["./"],
                 "alias": {
-                    "@client": "./src/client",
-                    "@errors": "./src/errors",
-                    "@models": "./src/models",
-                    "@utils": "./src/utils",
-                    "@types": "./src/types"
+                    "@/*": "./src/*",
+                    "@fixtures/*": "./test/__fixtures__/*"
                 }
             }
         ]

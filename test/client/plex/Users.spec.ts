@@ -1,8 +1,8 @@
-import { ApiClient } from '@client'
-import * as mockData from '../__fixtures__/signin.200.json'
-import { Users } from '../Users'
+import { ApiClient } from '@/client/ApiClient'
+import * as mockData from '@fixtures/users.signin.200.json'
+import { Users } from '@/client/plex/Users'
 
-jest.mock('@client', () => ({
+jest.mock('@/client/ApiClient', () => ({
     ApiClient: jest.fn().mockImplementation(() => ({
         post: jest.fn().mockResolvedValue({ data: mockData }),
         delete: jest.fn().mockResolvedValue({ data: null }),

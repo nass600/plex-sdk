@@ -1,5 +1,5 @@
-import { ApiClient } from '../..'
-import { User } from '@types'
+import { ApiClient } from '@/client/ApiClient'
+import { User } from '@/types'
 
 export class Users {
     apiClient: ApiClient

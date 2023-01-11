@@ -1,5 +1,5 @@
-import { ApiClient } from '@client'
-import { MetadataMediaContainer, SectionsMediaContainer } from '@types'
+import { ApiClient } from '@/client/ApiClient'
+import { MetadataMediaContainer, SectionsMediaContainer } from '@/types'
 
 export interface AllSectionsResponse {
     MediaContainer: SectionsMediaContainer;

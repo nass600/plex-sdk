@@ -1,4 +1,4 @@
-import { Plex } from '../Plex'
+import { Plex } from '@/client/plex'
 
 const fakeToken = 'fakeToken'
 

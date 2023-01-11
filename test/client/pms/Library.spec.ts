@@ -1,8 +1,8 @@
-import { ApiClient } from '@client'
-import * as mockAllSections from '../__fixtures__/allSections.200.json'
-import { Library } from '../Library'
+import { ApiClient } from '@/client/ApiClient'
+import * as mockAllSections from '@fixtures/library.allSections.200.json'
+import { Library } from '@/client/pms'
 
-jest.mock('@client', () => ({
+jest.mock('@/client/ApiClient', () => ({
     ApiClient: jest.fn().mockImplementation(() => ({
         get: jest.fn().mockResolvedValue({ data: mockAllSections }),
         setAuthorization: jest.fn()

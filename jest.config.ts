@@ -1,7 +1,7 @@
-const { pathsToModuleNameMapper } = require('ts-jest/utils')
-const { compilerOptions } = require('./tsconfig')
+import { pathsToModuleNameMapper } from 'ts-jest'
+import tsconfig from './tsconfig.json'
 
-module.exports = {
+export default {
     coverageDirectory: '<rootDir>/.reports/jest/coverage',
     collectCoverage: !process.argv.includes('--watch'),
     collectCoverageFrom: [
@@ -20,10 +20,11 @@ module.exports = {
         }
     },
     moduleFileExtensions: ['ts', 'js', 'json'],
+    modulePaths: [tsconfig.compilerOptions.baseUrl],
     moduleNameMapper: {
-        ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' })
+        ...pathsToModuleNameMapper(tsconfig.compilerOptions.paths)
     },
     testPathIgnorePatterns: ['/node_modules/'],
     testRegex: '\\.spec\\.ts$',
-    watchPlugins: [require.resolve('jest-watch-typeahead/filename'), require.resolve('jest-watch-typeahead/testname')]
+    watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname']
 }

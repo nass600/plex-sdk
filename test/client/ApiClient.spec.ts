@@ -1,6 +1,6 @@
 import axios, { AxiosStatic } from 'axios'
-import { ApiClient } from '@client'
-import { PlexHeader } from '@types'
+import { ApiClient } from '@/client/ApiClient'
+import { PlexHeader } from '@/types'
 
 jest.mock('axios');
 (axios.request as jest.Mock).mockResolvedValue({})

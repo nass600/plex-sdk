@@ -1,7 +1,7 @@
-import { Users } from './users'
-import { Resources } from './resources'
-import { ApiClient, Headers } from '@client'
-import { PLEX_BASE_URL } from '@types'
+import { Resources } from '@/client/plex/Resources'
+import { Users } from '@/client/plex/Users'
+import { ApiClient, Headers } from '@/client/ApiClient'
+import { PLEX_BASE_URL } from '@/types'
 
 export interface PlexOptions {
     clientIdentifier?: string;
