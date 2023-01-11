@@ -2,12 +2,13 @@ import { pathsToModuleNameMapper } from 'ts-jest'
 import tsconfig from './tsconfig.json'
 
 export default {
+    preset: 'ts-jest',
     coverageDirectory: '<rootDir>/.reports/jest/coverage',
     collectCoverage: !process.argv.includes('--watch'),
     collectCoverageFrom: [
         'src/**/*.ts',
         '!src/types/**/*',
-        '!src/**/__tests__/**/*',
+        '!test/**/*',
         '!**/node_modules/**'
     ],
     coverageReporters: ['lcov', 'text', 'html'],

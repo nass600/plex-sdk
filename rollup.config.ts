@@ -34,8 +34,7 @@ export default {
         }),
         babel({
             babelHelpers: 'bundled',
-            exclude: 'node_modules/**',
-            extensions: ['.js', '.ts']
+            presets: ['@babel/preset-env']
         }),
         terser(),
         progress(),
