@@ -2,8 +2,6 @@
     "compilerOptions": {
         "sourceMap": true,
         "allowJs": false,
-        "declaration": true,
-        "outDir": "dist/lib",
         "module": "es2015",
         "moduleResolution": "node",
         "forceConsistentCasingInFileNames": true,
@@ -14,8 +12,6 @@
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true,
         "esModuleInterop": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
         "removeComments": true,
         "resolveJsonModule": true,
         "rootDirs": ["src"],

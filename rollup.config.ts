@@ -5,42 +5,78 @@ import typescript from '@rollup/plugin-typescript'
 import transformPaths from '@zerollup/ts-transform-paths'
 import { babel } from '@rollup/plugin-babel'
 import terser from '@rollup/plugin-terser'
-import progress from 'rollup-plugin-progress'
-import { visualizer } from 'rollup-plugin-visualizer'
+import json from '@rollup/plugin-json'
+import autoExternal from 'rollup-plugin-auto-external'
+import path from 'path'
+import fs from 'fs'
 
-export default {
-    input: './src/index.ts',
-    external: ['axios'],
-    output: [
-        { file: 'dist/plex.esm.js', format: 'esm', sourcemap: true },
-        { file: 'dist/plex.esm.min.js', format: 'esm', sourcemap: true },
-        // { file: pkg.module, format: 'esm', sourcemap: true },
-        { file: 'dist/plex.js', format: 'cjs', sourcemap: true },
-        { file: 'dist/plex.min.js', format: 'cjs', sourcemap: true }
-        // { file: pkg.module.replace('.js', '.min.js'), format: 'esm', sourcemap: true },
-        // { file: pkg.main.replace('.js', '.min.js'), format: 'cjs', sourcemap: true }
-    ],
-    plugins: [
-        clear({
-            targets: ['dist']
+const pkg = require('./package.json')
+const input = './src/index.ts'
+const ouputDir = './dist'
+
+// Clean dist folder
+fs.rmSync(ouputDir, { recursive: true, force: true });
+
+const buildConfig = ({es5, minifiedVersion = true, ...config}) => {
+    const {file} = config.output
+    const ext = path.extname(file)
+    const basename = path.basename(file, ext)
+    const extArr = ext.split('.')
+    extArr.shift()
+
+
+    const build = ({minified}) => ({
+        input,
+        ...config,
+        output: {
+            ...config.output,
+            sourcemap: true,
+            file: `${path.dirname(file)}/${basename}.${(minified ? ['min', ...extArr] : extArr).join('.')}`
+        },
+        plugins: [
+            json(),
+            resolve({browser: true}),
+            commonjs(),
+            autoExternal(),
+            typescript({
+                tsconfig: 'tsconfig.json',
+                transformers: [(service) => transformPaths(service.getProgram())]
+            }),
+            minified && terser(),
+            ...(es5 ? [babel({
+                babelHelpers: 'bundled',
+                presets: ['@babel/preset-env']
+            })] : []),
+            ...(config.plugins || []),
+        ]
+    })
+
+    return [
+        build({minified: false}),
+        build({minified: true})
+    ]
+}
+
+export default async () => {
+    return [
+        // Browser ESM bundle
+        ...buildConfig({
+            es5: false,
+            output: {
+                file: `dist/esm/${pkg.name}.js`,
+                format: "esm",
+                generatedCode: {
+                    constBinding: true
+                }
+            }
         }),
-        resolve({
-            extensions: ['.js', '.ts', '.json']
-        }),
-        commonjs(),
-        typescript({
-            tsconfig: 'tsconfig.json',
-            transformers: [(service) => transformPaths(service.getProgram())]
-        }),
-        babel({
-            babelHelpers: 'bundled',
-            presets: ['@babel/preset-env']
-        }),
-        terser(),
-        progress(),
-        visualizer({
-            filename: '.reports/rollup/statistics.html',
-            title: 'Plex SDK'
+        // Browser CJS bundle
+        ...buildConfig({
+            es5: false,
+            output: {
+                file: `dist/${pkg.name}.js`,
+                format: "cjs",
+            }
         })
     ]
 }
