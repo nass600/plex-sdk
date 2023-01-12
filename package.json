@@ -8,12 +8,12 @@
     "exports": {
         ".": {
             "types": "./dist/plex-sdk.d.ts",
-            "require": "./dist/plex-sdk.js",
-            "import": "./dist/esm/plex-sdk.js"
+            "require": "./dist/plex-sdk.cjs",
+            "import": "./dist/plex-sdk.js"
         }
     },
-    "main": "dist/plex-sdk.js",
-    "module": "dist/esm/plex.js",
+    "main": "dist/plex-sdk.cjs",
+    "module": "dist/plex.js",
     "types": "dist/plex-sdk.d.ts",
     "scripts": {
         "build": "rollup -c --configPlugin typescript --bundleConfigAsCjs",

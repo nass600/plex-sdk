@@ -64,7 +64,7 @@ export default async () => {
         ...buildConfig({
             es5: false,
             output: {
-                file: `${ouputDir}/esm/${pkg.name}.js`,
+                file: `${ouputDir}/${pkg.name}.js`,
                 format: "esm",
                 generatedCode: {
                     constBinding: true
@@ -75,7 +75,7 @@ export default async () => {
         ...buildConfig({
             es5: false,
             output: {
-                file: `${ouputDir}/${pkg.name}.js`,
+                file: `${ouputDir}/${pkg.name}.cjs`,
                 format: "cjs",
             }
         }),
