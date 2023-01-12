@@ -1,5 +1,5 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import { PlexHeader } from '@types'
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, ParamsSerializerOptions } from 'axios'
+import { PlexHeader } from '@/types'
 
 export interface Headers {
     [key: string]: string;
@@ -13,8 +13,8 @@ export enum RequestMethod {
 }
 
 export class ApiClient {
-    client: AxiosInstance;
-    token?: string;
+    client: AxiosInstance
+    token?: string
 
     constructor (baseUrl: string, headers?: Headers) {
         this.client = this.createClient(
@@ -27,7 +27,7 @@ export class ApiClient {
         endpoint: string,
         params?: Record<string, unknown>,
         headers?: Headers,
-        paramsSerializer?: (params: Record<string, unknown>) => string
+        paramsSerializer?: ParamsSerializerOptions
     ): Promise<T> {
         return this.request<T>(
             RequestMethod.GET,
@@ -104,7 +104,7 @@ export class ApiClient {
         params?: Record<string, unknown>,
         data?: Record<string, unknown>,
         headers: Headers = {},
-        paramsSerializer?: (params: Record<string, unknown>) => string
+        paramsSerializer?: ParamsSerializerOptions
     ): Promise<T> {
         const requestConfig: AxiosRequestConfig = {
             data,

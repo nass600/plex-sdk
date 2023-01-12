@@ -11,25 +11,18 @@
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true,
-        "declaration": true,
         "esModuleInterop": true,
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
         "removeComments": true,
         "resolveJsonModule": true,
         "rootDirs": ["src"],
         "baseUrl": ".",
         "paths": {
-            "@client": ["src/client"],
-            "@errors": ["src/errors"],
-            "@models": ["src/models"],
-            "@utils": ["src/utils"],
-            "@types": ["src/types"]
+            "@/*": ["src/*"],
+            "@fixtures/*": ["test/__fixtures__/*"]
         }
     },
-    "outDir": "build/lib",
     "target": "es5",
     "lib": ["es5", "es6", "es7", "esnext", "dom"],
-    "include": ["src/**/*", "**/__tests__", "tests/**/*"],
+    "include": ["src/**/*"],
     "exclude": ["node_modules"]
 }

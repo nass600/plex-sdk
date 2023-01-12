@@ -25,11 +25,8 @@ jobs:
         with:
           node-version: "lts/*"
 
-      - name: Install yarn
-        run: npm install -g yarn
-
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run tests
-        run: yarn run test
+        run: npm run test
