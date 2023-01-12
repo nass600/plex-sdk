@@ -3,9 +3,7 @@
         "./src/index.ts"
     ],
     "readme": "none",
-    "exclude": "**/__tests__/**",
+    "exclude": "./test/**",
     "excludeExternals": true,
-    "includeDeclarations": true,
-    "mode": "file",
     "out": ".docs"
 }

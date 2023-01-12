@@ -1,4 +1,7 @@
 export default {
+    branches: [
+        'master'
+    ],
     plugins: [
         '@semantic-release/release-notes-generator',
         '@semantic-release/changelog',
@@ -9,7 +12,8 @@ export default {
                 assets: [
                     'package.json',
                     'package-lock.json'
-                ]
+                ],
+                message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
             }
         ],
         '@semantic-release/github'
