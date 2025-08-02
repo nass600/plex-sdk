@@ -1,11 +1,42 @@
-.*
-build
-commitlint.config.ts
-jest.config.ts
-node_modules
-release.config.ts
-rollup.config.ts
-src
-test
+# Source and test files
+src/
+test/
+
+# Configuration files
+*.config.ts
+*.config.js
 tsconfig*.json
-typedoc.json
+eslint.config.ts
+commitlint.config.ts
+.prettierrc
+.prettierignore
+.releaserc
+
+# Build and development files
+.reports/
+.husky/
+.github/
+.git/
+.gitignore
+
+# Dependencies
+node_modules/
+
+# Documentation
+CHANGELOG.md
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

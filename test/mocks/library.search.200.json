@@ -1,0 +1,86 @@
+{
+  "MediaContainer": {
+    "size": 2,
+    "allowSync": true,
+    "identifier": "com.plexapp.plugins.library",
+    "mediaTagPrefix": "/system/bundle/media/flags/",
+    "mediaTagVersion": 1579823211,
+    "SearchResult": [
+      {
+        "ratingKey": "62973",
+        "key": "/library/metadata/62973",
+        "guid": "com.plexapp.agents.themoviedb://467936?lang=es",
+        "studio": "BBC Films",
+        "type": "movie",
+        "title": "El Veredicto. La ley del menor",
+        "titleSort": "Veredicto. La ley del menor",
+        "originalTitle": "The Children Act",
+        "summary": "Fiona Maye (Emma Thompson) es una prestigiosa jueza del Tribunal Superior de Londres especializada en derechos familiares que atraviesa por una grave crisis matrimonial.",
+        "rating": 6.8,
+        "viewCount": 1,
+        "lastViewedAt": 1565040064,
+        "year": 2018,
+        "tagline": "Todos tomamos decisiones. Ella hace historia.",
+        "thumb": "/library/metadata/62973/thumb/1609898488",
+        "art": "/library/metadata/62973/art/1609898488",
+        "duration": 6331958,
+        "originallyAvailableAt": "2018-11-23",
+        "addedAt": 1553461154,
+        "updatedAt": 1609898488,
+        "Genre": [
+          {
+            "tag": "Drama"
+          }
+        ],
+        "Director": [
+          {
+            "tag": "Richard Eyre"
+          }
+        ],
+        "Role": [
+          {
+            "tag": "Emma Thompson"
+          },
+          {
+            "tag": "Fionn Whitehead"
+          }
+        ]
+      },
+      {
+        "ratingKey": "3405",
+        "key": "/library/metadata/3405",
+        "guid": "com.plexapp.agents.themoviedb://12345?lang=en",
+        "studio": "Test Studio",
+        "type": "movie",
+        "title": "Test Movie",
+        "titleSort": "Test Movie",
+        "originalTitle": "Test Movie",
+        "summary": "A test movie for search results.",
+        "rating": 7.5,
+        "viewCount": 0,
+        "year": 2020,
+        "thumb": "/library/metadata/3405/thumb/1609898488",
+        "art": "/library/metadata/3405/art/1609898488",
+        "duration": 7200000,
+        "originallyAvailableAt": "2020-01-01",
+        "addedAt": 1553461154,
+        "updatedAt": 1609898488,
+        "Genre": [
+          {
+            "tag": "Action"
+          }
+        ],
+        "Director": [
+          {
+            "tag": "Test Director"
+          }
+        ],
+        "Role": [
+          {
+            "tag": "Test Actor"
+          }
+        ]
+      }
+    ]
+  }
+}

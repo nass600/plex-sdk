@@ -1,0 +1,370 @@
+{
+  "MediaContainer": {
+    "size": 2903,
+    "allowSync": true,
+    "art": "/:/resources/movie-fanart.jpg",
+    "identifier": "com.plexapp.plugins.library",
+    "librarySectionID": 2,
+    "librarySectionTitle": "Movies",
+    "librarySectionUUID": "2f007be0-4b60-4676-8c46-4b754ae90122",
+    "mediaTagPrefix": "/system/bundle/media/flags/",
+    "mediaTagVersion": 1579823211,
+    "thumb": "/:/resources/movie.png",
+    "title1": "Movies",
+    "title2": "All Movies",
+    "viewGroup": "movie",
+    "viewMode": 65592,
+    "Metadata": [
+      {
+        "ratingKey": "62973",
+        "key": "/library/metadata/62973",
+        "guid": "com.plexapp.agents.themoviedb://467936?lang=es",
+        "studio": "BBC Films",
+        "type": "movie",
+        "title": "El Veredicto. La ley del menor",
+        "titleSort": "Veredicto. La ley del menor",
+        "originalTitle": "The Children Act",
+        "summary": "Fiona Maye (Emma Thompson) es una prestigiosa jueza del Tribunal Superior de Londres especializada en derechos familiares que atraviesa por una grave crisis matrimonial. Cuando llega a sus manos el caso de Adan (Fionn Whitehead), un adolescente con leucemia que se niega a hacerse una transfusión de sangre al ser Testigo de Jehová, Fiona descubrirá sentimientos ocultos que desconocía, y luchará para que Adan entre en razón y sobreviva.",
+        "rating": 6.8,
+        "viewCount": 1,
+        "lastViewedAt": 1565040064,
+        "year": 2018,
+        "tagline": "Todos tomamos decisiones. Ella hace historia.",
+        "thumb": "/library/metadata/62973/thumb/1609898488",
+        "art": "/library/metadata/62973/art/1609898488",
+        "duration": 6331958,
+        "originallyAvailableAt": "2018-11-23",
+        "addedAt": 1553461154,
+        "updatedAt": 1609898488,
+        "Media": [
+          {
+            "id": 62799,
+            "duration": 6331958,
+            "bitrate": 6090,
+            "width": 1920,
+            "height": 1036,
+            "aspectRatio": 1.85,
+            "audioChannels": 6,
+            "audioCodec": "ac3",
+            "videoCodec": "h264",
+            "videoResolution": "1080",
+            "container": "mkv",
+            "videoFrameRate": "24p",
+            "videoProfile": "high",
+            "Part": [
+              {
+                "id": 64932,
+                "key": "/library/parts/64932/1553458663/file.mkv",
+                "duration": 6331958,
+                "file": "/volume1/Movies/El Veredicto, La ley del menor (2017).mkv",
+                "size": 4822154447,
+                "container": "mkv",
+                "videoProfile": "high"
+              }
+            ]
+          }
+        ],
+        "Genre": [
+          {
+            "tag": "Drama"
+          }
+        ],
+        "Director": [
+          {
+            "tag": "Richard Eyre"
+          }
+        ],
+        "Writer": [
+          {
+            "tag": "Ian McEwan"
+          }
+        ],
+        "Country": [
+          {
+            "tag": "United Kingdom"
+          }
+        ],
+        "Role": [
+          {
+            "tag": "Emma Thompson"
+          },
+          {
+            "tag": "Fionn Whitehead"
+          },
+          {
+            "tag": "Stanley Tucci"
+          }
+        ]
+      },
+      {
+        "ratingKey": "3405",
+        "key": "/library/metadata/3405",
+        "guid": "com.plexapp.agents.themoviedb://426?lang=es",
+        "studio": "Paramount Pictures",
+        "type": "movie",
+        "title": "Vértigo",
+        "titleSort": "Vertigo",
+        "originalTitle": "Vertigo",
+        "summary": "Scottie Fergusson (James Stewart) es un detective de la policía de San Francisco que padece de vértigo. Cuando un compañero cae al vacío desde una cornisa mientras persiguen a un delincuente, Scottie decide retirarse. Gavin Elster (Tom Helmore), un viejo amigo del colegio, lo contrata para que vigile a su esposa Madeleine (Kim Novak), una bella mujer que está obsesionada con su pasado.",
+        "rating": 7.6,
+        "viewCount": 1,
+        "lastViewedAt": 1533464060,
+        "year": 1958,
+        "thumb": "/library/metadata/3405/thumb/1610164372",
+        "art": "/library/metadata/3405/art/1610164372",
+        "duration": 7775697,
+        "originallyAvailableAt": "1958-05-28",
+        "addedAt": 1368726314,
+        "updatedAt": 1610164372,
+        "Media": [
+          {
+            "id": 3293,
+            "duration": 7775697,
+            "bitrate": 4933,
+            "width": 1920,
+            "height": 1040,
+            "aspectRatio": 1.85,
+            "audioChannels": 6,
+            "audioCodec": "ac3",
+            "videoCodec": "h264",
+            "videoResolution": "1080",
+            "container": "mkv",
+            "videoFrameRate": "24p",
+            "videoProfile": "high",
+            "Part": [
+              {
+                "id": 4093,
+                "key": "/library/parts/4093/1368726314/file.mkv",
+                "duration": 7775697,
+                "file": "/volume1/Movies/Vértigo (1958).mkv",
+                "size": 4797028970,
+                "container": "mkv",
+                "videoProfile": "high"
+              }
+            ]
+          }
+        ],
+        "Genre": [
+          {
+            "tag": "Crimen"
+          },
+          {
+            "tag": "Drama"
+          },
+          {
+            "tag": "Misterio"
+          }
+        ],
+        "Director": [
+          {
+            "tag": "Alfred Hitchcock"
+          }
+        ],
+        "Writer": [
+          {
+            "tag": "Pierre Boileau"
+          },
+          {
+            "tag": "Thomas Narcejac"
+          },
+          {
+            "tag": "Alec Coppel"
+          }
+        ],
+        "Country": [
+          {
+            "tag": "USA"
+          }
+        ],
+        "Role": [
+          {
+            "tag": "James Stewart"
+          },
+          {
+            "tag": "Kim Novak"
+          },
+          {
+            "tag": "Barbara Bel Geddes"
+          }
+        ]
+      },
+      {
+        "ratingKey": "3393",
+        "key": "/library/metadata/3393",
+        "guid": "com.plexapp.agents.themoviedb://10029?lang=es",
+        "studio": "Initial Entertainment Group (IEG)",
+        "type": "movie",
+        "title": "Very Bad Things",
+        "summary": "Fisher está apunto de casarse con la mujer de sus sueños. Sus amigos deciden montarle en Las Vegas una despedida de soltero que no pueda olvidar jamás. Y, efectivamente, ninguno de ellos la olvidará jamás...",
+        "rating": 6.2,
+        "year": 1998,
+        "thumb": "/library/metadata/3393/thumb/1610164327",
+        "art": "/library/metadata/3393/art/1610164327",
+        "duration": 6016478,
+        "originallyAvailableAt": "1998-09-11",
+        "addedAt": 1236814241,
+        "updatedAt": 1610164327,
+        "Media": [
+          {
+            "id": 3281,
+            "duration": 6016478,
+            "bitrate": 6598,
+            "width": 1280,
+            "height": 688,
+            "aspectRatio": 1.85,
+            "audioChannels": 6,
+            "audioCodec": "ac3",
+            "videoCodec": "h264",
+            "videoResolution": "720",
+            "container": "mkv",
+            "videoFrameRate": "24p",
+            "videoProfile": "high",
+            "Part": [
+              {
+                "id": 4081,
+                "key": "/library/parts/4081/1236814241/file.mkv",
+                "duration": 6016478,
+                "file": "/volume1/Movies/Very Bad Things (1998).mkv",
+                "size": 4965381597,
+                "container": "mkv",
+                "videoProfile": "high"
+              }
+            ]
+          }
+        ],
+        "Genre": [
+          {
+            "tag": "Comedia"
+          },
+          {
+            "tag": "Crimen"
+          },
+          {
+            "tag": "Suspense"
+          }
+        ],
+        "Director": [
+          {
+            "tag": "Peter Berg"
+          }
+        ],
+        "Writer": [
+          {
+            "tag": "Peter Berg"
+          }
+        ],
+        "Country": [
+          {
+            "tag": "USA"
+          }
+        ],
+        "Role": [
+          {
+            "tag": "Jon Favreau"
+          },
+          {
+            "tag": "Leland Orser"
+          },
+          {
+            "tag": "Cameron Diaz"
+          }
+        ]
+      },
+      {
+        "ratingKey": "3694",
+        "key": "/library/metadata/3694",
+        "guid": "com.plexapp.agents.themoviedb://269149?lang=es",
+        "studio": "Walt Disney Pictures",
+        "type": "movie",
+        "title": "Zootrópolis",
+        "titleSort": "Zootropolis",
+        "originalTitle": "Zootopia",
+        "contentRating": "es/A",
+        "summary": "La moderna metrópoli mamífera de Zootrópolis es una ciudad absolutamente única. Está compuesta de barrios con diferentes hábitats como la lujosa Sahara Square y la gélida Tundratown. Es un crisol donde los animales de cada entorno conviven, un lugar donde no importa lo que seas. De hecho puedes ser cualquier cosa, desde un elefante enorme hasta la musaraña más diminuta. Pero cuando llega la optimista agente Judy Hopps, descubre que ser la primera conejita de un cuerpo policial compuesto de animales duros y enormes no es nada fácil. Pero está decidida a demostrar su valía y se mete de cabeza en un caso, a pesar de que eso significa trabajar con Nick Wilde, un zorro parlanchín y estafador, para resolver el misterio.",
+        "rating": 7.5,
+        "year": 2016,
+        "tagline": "Bienvenido a la jungla urbana.",
+        "thumb": "/library/metadata/3694/thumb/1610164731",
+        "art": "/library/metadata/3694/art/1610164731",
+        "duration": 6540528,
+        "originallyAvailableAt": "2016-02-12",
+        "addedAt": 1465923825,
+        "updatedAt": 1610164731,
+        "Media": [
+          {
+            "id": 3554,
+            "duration": 6540528,
+            "bitrate": 5868,
+            "width": 1920,
+            "height": 804,
+            "aspectRatio": 2.35,
+            "audioChannels": 6,
+            "audioCodec": "ac3",
+            "videoCodec": "h264",
+            "videoResolution": "1080",
+            "container": "mkv",
+            "videoFrameRate": "24p",
+            "videoProfile": "high",
+            "Part": [
+              {
+                "id": 4354,
+                "key": "/library/parts/4354/1465918682/file.mkv",
+                "duration": 6540528,
+                "file": "/volume1/Movies/Zootrópolis (2016).mkv",
+                "size": 4799487905,
+                "container": "mkv",
+                "videoProfile": "high"
+              }
+            ]
+          }
+        ],
+        "Genre": [
+          {
+            "tag": "Animación"
+          },
+          {
+            "tag": "Aventura"
+          },
+          {
+            "tag": "Familia"
+          }
+        ],
+        "Director": [
+          {
+            "tag": "Byron Howard"
+          },
+          {
+            "tag": "Rich Moore"
+          },
+          {
+            "tag": "Jared Bush"
+          }
+        ],
+        "Writer": [
+          {
+            "tag": "Jared Bush"
+          },
+          {
+            "tag": "Phil Johnston"
+          }
+        ],
+        "Country": [
+          {
+            "tag": "USA"
+          }
+        ],
+        "Role": [
+          {
+            "tag": "Ginnifer Goodwin"
+          },
+          {
+            "tag": "Jason Bateman"
+          },
+          {
+            "tag": "Shakira"
+          }
+        ]
+      }
+    ]
+  }
+}
