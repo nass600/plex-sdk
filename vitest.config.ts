@@ -18,7 +18,7 @@ export default defineConfig({
         '**/*.config.*',
         '**/*.config.js',
         '**/*.config.ts',
-        '**/rollup.config.*',
+
         '**/vitest.config.*',
         '**/eslint.config.*',
         '**/commitlint.config.*',

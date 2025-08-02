@@ -5,8 +5,8 @@
     "types": ["vitest/globals"],
     "sourceMap": true,
     "allowJs": false,
-    "noEmit": true,
-    "module": "es2015",
+    "noEmit": true, // keep this; tsup handles emitting
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
