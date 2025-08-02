@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
 
       - name: Install dependencies
         run: npm install
@@ -34,7 +34,7 @@ jobs:
 
       - name: Release
         env:
-            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-            HUSKY: 0
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          HUSKY: 0
         run: npx semantic-release

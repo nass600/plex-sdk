@@ -1,0 +1,77 @@
+{
+  "MediaContainer": {
+    "size": 1,
+    "allowSync": true,
+    "identifier": "com.plexapp.plugins.library",
+    "librarySectionID": 2,
+    "librarySectionTitle": "Movies",
+    "librarySectionUUID": "2f007be0-4b60-4676-8c46-4b754ae90122",
+    "mediaTagPrefix": "/system/bundle/media/flags/",
+    "mediaTagVersion": 1579823211,
+    "Metadata": {
+      "ratingKey": "2024",
+      "key": "/library/metadata/2024",
+      "guid": "com.plexapp.agents.themoviedb://155?lang=es",
+      "studio": "DC Comics",
+      "type": "movie",
+      "title": "El caballero oscuro",
+      "titleSort": "caballero oscuro",
+      "librarySectionTitle": "Movies",
+      "librarySectionID": 2,
+      "librarySectionKey": "/library/sections/2",
+      "originalTitle": "The Dark Knight",
+      "summary": "Batman regresa para continuar su guerra contra el crimen.",
+      "rating": 8.0,
+      "viewCount": 6,
+      "lastViewedAt": 1569239499,
+      "year": 2008,
+      "tagline": "Algunos hombres sólo quieren ver el mundo arder.",
+      "thumb": "/library/metadata/2024/thumb/1610281027",
+      "art": "/library/metadata/2024/art/1610281027",
+      "duration": 9117066,
+      "originallyAvailableAt": "2008-08-13",
+      "addedAt": 1309207325,
+      "updatedAt": 1610281027,
+      "Genre": [
+        {
+          "tag": "Action"
+        },
+        {
+          "tag": "Crime"
+        },
+        {
+          "tag": "Drama"
+        }
+      ],
+      "Director": [
+        {
+          "tag": "Christopher Nolan"
+        }
+      ],
+      "Writer": [
+        {
+          "tag": "Jonathan Nolan"
+        },
+        {
+          "tag": "Christopher Nolan"
+        }
+      ],
+      "Country": [
+        {
+          "tag": "United States"
+        }
+      ],
+      "Role": [
+        {
+          "tag": "Christian Bale"
+        },
+        {
+          "tag": "Heath Ledger"
+        },
+        {
+          "tag": "Aaron Eckhart"
+        }
+      ]
+    }
+  }
+}

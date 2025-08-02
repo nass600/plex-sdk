@@ -1,9 +1,0 @@
-{
-    "entryPoints": [
-        "./src/index.ts"
-    ],
-    "readme": "none",
-    "exclude": "./test/**",
-    "excludeExternals": true,
-    "out": ".docs"
-}
