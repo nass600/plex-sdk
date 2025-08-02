@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/nass600/plex-sdk/compare/v4.0.0...v4.0.1) (2025-08-02)
+
+
+### Bug Fixes
+
+* changed bundler ([0da5fe0](https://github.com/nass600/plex-sdk/commit/0da5fe09feaa4fc56008440bc92b628cc838ce73))
+
 ## [2.0.1](https://github.com/nass600/plex-sdk/compare/2.0.0...2.0.1) (2023-01-09)
 
 ### Bug Fixes
