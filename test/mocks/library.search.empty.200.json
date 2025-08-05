@@ -1,0 +1,12 @@
+{
+  "MediaContainer": {
+    "size": 0,
+    "allowSync": true,
+    "identifier": "com.plexapp.plugins.library",
+    "librarySectionID": 2,
+    "librarySectionTitle": "Movies",
+    "librarySectionUUID": "2f007be0-4b60-4676-8c46-4b754ae90122",
+    "mediaTagPrefix": "/system/bundle/media/flags/",
+    "mediaTagVersion": 1579823211
+  }
+}

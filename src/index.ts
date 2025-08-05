@@ -3,9 +3,9 @@ export { PlexClient } from './core/PlexClient'
 export { PlexServer } from './core/PlexServer'
 
 // Resources
-export { Hubs } from './resources/Hubs'
-export { Library, SearchType } from './resources/Library'
-export { Metadata } from './resources/Metadata'
+export { HubsApi } from './resources/HubsApi'
+export { LibraryApi, SearchType } from './resources/LibraryApi'
+export { MetadataApi } from './resources/MetadataApi'
 
 // Types
 export * from './types'

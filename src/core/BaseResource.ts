@@ -1,5 +1,6 @@
 import { PlexServerContext } from '@/types'
 import queryString from 'query-string'
+import { get } from 'lodash'
 
 export abstract class BaseResource {
   constructor(protected ctx: PlexServerContext) {}
@@ -7,6 +8,7 @@ export abstract class BaseResource {
   protected async get<T, P = Record<string, unknown>>(
     path: string,
     responsePath: string,
+    defaultValue?: T,
     queryParams?: P
   ): Promise<T> {
     const str = queryParams
@@ -28,16 +30,11 @@ export abstract class BaseResource {
 
     const data = (await res.json()) as Record<string, unknown>
 
-    // Extract the nested path from the response
-    const pathParts = responsePath.split('.')
-    let result: unknown = data
-
-    for (const part of pathParts) {
-      if (result && typeof result === 'object' && part in result) {
-        result = (result as Record<string, unknown>)[part]
-      } else {
-        throw new Error(`Path "${responsePath}" not found in response`)
-      }
+    // Extract the nested path from the response using lodash.get
+    const result = get(data, responsePath)
+    if (result === undefined) {
+      // Return the provided default value or undefined
+      return defaultValue as T
     }
 
     return result as T

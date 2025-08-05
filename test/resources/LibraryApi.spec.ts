@@ -1,9 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { Library, SearchType } from '@/index'
+import { LibraryApi, SearchType } from '@/index'
 import { PlexServerContext } from '@/types'
+import { server } from '../setup'
+import { http, HttpResponse } from 'msw'
 
 describe('Library', () => {
-  let library: Library
+  let library: LibraryApi
   let mockContext: PlexServerContext
 
   beforeEach(() => {
@@ -14,12 +16,12 @@ describe('Library', () => {
         Accept: 'application/json',
       },
     }
-    library = new Library(mockContext)
+    library = new LibraryApi(mockContext)
   })
 
   describe('constructor', () => {
     it('should create a library instance', () => {
-      expect(library).toBeInstanceOf(Library)
+      expect(library).toBeInstanceOf(LibraryApi)
     })
   })
 
@@ -43,6 +45,31 @@ describe('Library', () => {
       expect(lib).toHaveProperty('key')
       expect(lib).toHaveProperty('agent')
     })
+
+    it('should return empty array when no libraries are found', async () => {
+      // Override the default handler for this test
+      server.use(
+        http.get('*/library/sections', () => {
+          return HttpResponse.json({
+            MediaContainer: {
+              size: 0,
+              allowSync: true,
+              identifier: 'com.plexapp.plugins.library',
+              librarySectionID: 2,
+              librarySectionTitle: 'Movies',
+              librarySectionUUID: '2f007be0-4b60-4676-8c46-4b754ae90122',
+              mediaTagPrefix: '/system/bundle/media/flags/',
+              mediaTagVersion: 1579823211,
+            },
+          })
+        })
+      )
+
+      const result = await library.all()
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result.length).toBe(0)
+    })
   })
 
   describe('allItems', () => {
@@ -65,6 +92,13 @@ describe('Library', () => {
       expect(Array.isArray(result)).toBe(true)
       expect(result.length).toBeGreaterThan(0)
     })
+
+    it('should return empty array when no items are found', async () => {
+      const result = await library.allItems(999)
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result.length).toBe(0)
+    })
   })
 
   describe('search', () => {
@@ -85,6 +119,16 @@ describe('Library', () => {
       })
 
       expect(Array.isArray(result)).toBe(true)
+    })
+
+    it('should return empty array when no search results found', async () => {
+      const result = await library.search({
+        query: 'nonexistent movie that will never exist',
+        searchTypes: [SearchType.MOVIES],
+      })
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result.length).toBe(0)
     })
 
     it('should throw error for empty query', async () => {

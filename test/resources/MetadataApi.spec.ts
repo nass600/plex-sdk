@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { Metadata } from '@/index'
+import { MetadataApi } from '@/index'
 import { PlexServerContext } from '@/types'
 
 describe('Metadata', () => {
-  let metadata: Metadata
+  let metadata: MetadataApi
   let mockContext: PlexServerContext
 
   beforeEach(() => {
@@ -14,12 +14,12 @@ describe('Metadata', () => {
         Accept: 'application/json',
       },
     }
-    metadata = new Metadata(mockContext)
+    metadata = new MetadataApi(mockContext)
   })
 
   describe('constructor', () => {
     it('should create a metadata instance', () => {
-      expect(metadata).toBeInstanceOf(Metadata)
+      expect(metadata).toBeInstanceOf(MetadataApi)
     })
   })
 
@@ -51,6 +51,12 @@ describe('Metadata', () => {
       expect(result).toBeDefined()
       expect(result).toHaveProperty('title')
       expect(result).toHaveProperty('type')
+    })
+
+    it('should return undefined when no metadata is found', async () => {
+      const result = await metadata.one('999999')
+
+      expect(result).toBeUndefined()
     })
   })
 })

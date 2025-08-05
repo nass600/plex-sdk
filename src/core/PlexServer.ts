@@ -1,13 +1,13 @@
 import { PlexConnection, PlexResource, PlexServerContext } from '../types'
-import { Hubs } from '@/resources/Hubs'
-import { Library } from '@/resources/Library'
-import { Metadata } from '@/resources/Metadata'
+import { HubsApi } from '@/resources/HubsApi'
+import { LibraryApi } from '@/resources/LibraryApi'
+import { MetadataApi } from '@/resources/MetadataApi'
 
 export class PlexServer {
   private ctx: PlexServerContext
-  readonly hubs: Hubs
-  readonly library: Library
-  readonly metadata: Metadata
+  readonly hubs: HubsApi
+  readonly library: LibraryApi
+  readonly metadata: MetadataApi
 
   constructor(
     private resource: PlexResource,
@@ -36,9 +36,9 @@ export class PlexServer {
       },
     }
 
-    this.hubs = new Hubs(this.ctx)
-    this.library = new Library(this.ctx)
-    this.metadata = new Metadata(this.ctx)
+    this.hubs = new HubsApi(this.ctx)
+    this.library = new LibraryApi(this.ctx)
+    this.metadata = new MetadataApi(this.ctx)
   }
 
   get name() {

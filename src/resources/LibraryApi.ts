@@ -53,9 +53,9 @@ export interface LibraryAllItemsRequestParams {
   includeAdvanced?: number
 }
 
-export class Library extends BaseResource {
+export class LibraryApi extends BaseResource {
   async all(): Promise<Directory[]> {
-    return this.get<Directory[]>('/library/sections', 'MediaContainer.Directory')
+    return this.get<Directory[]>('/library/sections', 'MediaContainer.Directory', [])
   }
 
   async search(params: LibrarySearchRequestParams): Promise<SearchResult[]> {
@@ -73,6 +73,7 @@ export class Library extends BaseResource {
     return this.get<SearchResult[], LibrarySearchRequestParams>(
       '/library/search',
       'MediaContainer.SearchResult',
+      [],
       normalizedParams
     )
   }
@@ -81,6 +82,7 @@ export class Library extends BaseResource {
     return this.get<Metadata[], LibraryAllItemsRequestParams>(
       `/library/sections/${id}/all`,
       'MediaContainer.Metadata',
+      [],
       params
     )
   }

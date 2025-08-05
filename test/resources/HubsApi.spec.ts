@@ -1,9 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { Hubs } from '@/index'
+import { HubsApi } from '@/index'
 import { PlexServerContext } from '@/types'
+import { server } from '../setup'
+import { http, HttpResponse } from 'msw'
 
 describe('Hubs', () => {
-  let hubs: Hubs
+  let hubs: HubsApi
   let mockContext: PlexServerContext
 
   beforeEach(() => {
@@ -14,12 +16,12 @@ describe('Hubs', () => {
         Accept: 'application/json',
       },
     }
-    hubs = new Hubs(mockContext)
+    hubs = new HubsApi(mockContext)
   })
 
   describe('constructor', () => {
     it('should create a hubs instance', () => {
-      expect(hubs).toBeInstanceOf(Hubs)
+      expect(hubs).toBeInstanceOf(HubsApi)
     })
   })
 
@@ -42,6 +44,31 @@ describe('Hubs', () => {
       expect(hub).toHaveProperty('type')
       expect(hub).toHaveProperty('hubIdentifier')
       expect(hub).toHaveProperty('size')
+    })
+
+    it('should return empty array when no hubs are found', async () => {
+      // Override the default handler for this test
+      server.use(
+        http.get('*/hubs', () => {
+          return HttpResponse.json({
+            MediaContainer: {
+              size: 0,
+              allowSync: true,
+              identifier: 'com.plexapp.plugins.library',
+              librarySectionID: 2,
+              librarySectionTitle: 'Movies',
+              librarySectionUUID: '2f007be0-4b60-4676-8c46-4b754ae90122',
+              mediaTagPrefix: '/system/bundle/media/flags/',
+              mediaTagVersion: 1579823211,
+            },
+          })
+        })
+      )
+
+      const result = await hubs.all()
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result.length).toBe(0)
     })
   })
 })
