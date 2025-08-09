@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/nass600/plex-sdk/compare/v4.0.2...v4.0.3) (2025-08-09)
+
+
+### Bug Fixes
+
+* changing lodash to es ([04f0048](https://github.com/nass600/plex-sdk/commit/04f00484431a9cbce3a6e0b257c2d2e49a5482eb))
+
 ## [4.0.2](https://github.com/nass600/plex-sdk/compare/v4.0.1...v4.0.2) (2025-08-05)
 
 
