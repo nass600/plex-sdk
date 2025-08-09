@@ -111,6 +111,9 @@ export interface Metadata {
   Label?: Label[]
   Field?: Field[]
   Media: Media[]
+  Location?: {
+    path: string
+  }[]
 }
 
 export interface SearchResult {

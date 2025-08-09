@@ -1,6 +1,6 @@
 import { PlexServerContext } from '@/types'
 import queryString from 'query-string'
-import { get } from 'lodash'
+import { get } from 'lodash-es'
 
 export abstract class BaseResource {
   constructor(protected ctx: PlexServerContext) {}

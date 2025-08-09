@@ -30,7 +30,7 @@
     }
   },
   "dependencies": {
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "normalize-text": "^2.6.0",
     "query-string": "^9.2.2"
   },
@@ -40,7 +40,7 @@
     "@eslint/js": "^9.32.0",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/git": "^10.0.1",
-    "@types/lodash": "^4.17.20",
+    "@types/lodash-es": "^4.17.12",
     "@typescript-eslint/eslint-plugin": "^8.38.0",
     "@typescript-eslint/parser": "^8.38.0",
     "@vitest/coverage-v8": "^3.2.4",
@@ -62,5 +62,8 @@
   "engines": {
     "node": ">=18.12.1",
     "npm": ">=8.19.2"
+  },
+  "overrides": {
+    "tmp": "^0.2.3"
   }
 }

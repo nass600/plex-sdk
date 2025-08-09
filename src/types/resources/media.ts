@@ -60,7 +60,7 @@ export interface Part {
   size: number
   container: string
   videoProfile: string
-  Stream?: Stream
+  Stream?: Stream[]
 }
 
 export interface Media {
