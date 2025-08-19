@@ -1,3 +1,10 @@
+## [4.0.4](https://github.com/nass600/plex-sdk/compare/v4.0.3...v4.0.4) (2025-08-19)
+
+
+### Bug Fixes
+
+* minor typing fixes and query escaping in the search ([5a255a1](https://github.com/nass600/plex-sdk/commit/5a255a1eaa79d545a6d2c28f087f6472aa4a5dc8))
+
 ## [4.0.3](https://github.com/nass600/plex-sdk/compare/v4.0.2...v4.0.3) (2025-08-09)
 
 
