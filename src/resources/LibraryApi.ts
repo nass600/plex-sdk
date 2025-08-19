@@ -67,7 +67,7 @@ export class LibraryApi extends BaseResource {
     // Normalize the query text
     const normalizedParams = {
       ...params,
-      query: normalizeText(params.query.trim()),
+      query: normalizeText(params.query.replace('...', '').trim()),
     }
 
     return this.get<SearchResult[], LibrarySearchRequestParams>(

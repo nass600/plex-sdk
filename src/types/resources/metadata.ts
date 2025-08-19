@@ -110,7 +110,7 @@ export interface Metadata {
   Rating?: Rating[]
   Label?: Label[]
   Field?: Field[]
-  Media: Media[]
+  Media?: Media[]
   Location?: {
     path: string
   }[]
