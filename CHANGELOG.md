@@ -1,3 +1,10 @@
+## [4.1.1](https://github.com/nass600/plex-sdk/compare/v4.1.0...v4.1.1) (2025-08-20)
+
+
+### Bug Fixes
+
+* fixed indexes for episodes in metadata typings ([d1e0171](https://github.com/nass600/plex-sdk/commit/d1e01717cb833fd40979c7e934741f42bb3fabbb))
+
 # [4.1.0](https://github.com/nass600/plex-sdk/compare/v4.0.4...v4.1.0) (2025-08-20)
 
 
