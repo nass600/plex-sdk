@@ -92,6 +92,8 @@ export interface Metadata {
   audienceRatingImage: string
   primaryExtraKey: string
   ratingImage: string
+  index?: number
+  parentIndex?: number
   Image: Image[]
   UltraBlurColors: {
     topLeft: string
