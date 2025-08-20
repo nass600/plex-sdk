@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/nass600/plex-sdk/compare/v4.0.4...v4.1.0) (2025-08-20)
+
+
+### Features
+
+* added metadata children request ([1a14820](https://github.com/nass600/plex-sdk/commit/1a14820e036de68fe2839a1ab3d29568d2bf1188))
+
 ## [4.0.4](https://github.com/nass600/plex-sdk/compare/v4.0.3...v4.0.4) (2025-08-19)
 
 
