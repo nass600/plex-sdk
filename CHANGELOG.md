@@ -1,3 +1,10 @@
+## [4.1.4](https://github.com/nass600/plex-sdk/compare/v4.1.3...v4.1.4) (2025-08-23)
+
+
+### Bug Fixes
+
+* bumping release workflow ([0a263b3](https://github.com/nass600/plex-sdk/commit/0a263b30958ffb35192b434afdf516207ae98a85))
+
 ## [4.1.3](https://github.com/nass600/plex-sdk/compare/v4.1.2...v4.1.3) (2025-08-23)
 
 
