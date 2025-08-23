@@ -1,3 +1,10 @@
+## [4.1.3](https://github.com/nass600/plex-sdk/compare/v4.1.2...v4.1.3) (2025-08-23)
+
+
+### Bug Fixes
+
+* restoring doc ([b3aa721](https://github.com/nass600/plex-sdk/commit/b3aa721f049ed8dec794c1288a9a7062eeb046a6))
+
 ## [4.1.2](https://github.com/nass600/plex-sdk/compare/v4.1.1...v4.1.2) (2025-08-23)
 
 
