@@ -17,4 +17,12 @@ export class MetadataApi extends BaseResource {
       []
     )
   }
+
+  async leaves(id: string): Promise<Metadata[] | undefined> {
+    return this.get<Metadata[] | undefined>(
+      `/library/metadata/${id}/allLeaves`,
+      'MediaContainer.Metadata',
+      []
+    )
+  }
 }
