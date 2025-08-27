@@ -1,3 +1,10 @@
+# [4.2.0](https://github.com/nass600/plex-sdk/compare/v4.1.4...v4.2.0) (2025-08-27)
+
+
+### Features
+
+* added all leaves metadata endpoint ([0e1c41a](https://github.com/nass600/plex-sdk/commit/0e1c41a146c9466a956287a4223fb854ccbfc75f))
+
 ## [4.1.4](https://github.com/nass600/plex-sdk/compare/v4.1.3...v4.1.4) (2025-08-23)
 
 
