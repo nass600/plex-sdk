@@ -21,6 +21,10 @@ export interface PlexConnection {
   IPv6: boolean
 }
 
+export type PlexConnectionFilter = Partial<{
+  [K in keyof PlexConnection]: PlexConnection[K] | RegExp
+}>
+
 export interface PlexResource {
   name: string
   product: string

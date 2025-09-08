@@ -153,6 +153,49 @@ const server = await client.getServer('My Plex Server', {
 const hubs = server.hubs.all()
 ```
 
+### 4. Advanced Connection Filtering
+
+The SDK supports advanced connection filtering with both exact matching and regex patterns:
+
+```typescript
+// Exact matching (existing behavior)
+const server = await client.getServer('My Plex Server', {
+  address: '192.168.1.100',
+  protocol: 'https',
+  local: true,
+})
+
+// Regex pattern matching (new feature)
+const server = await client.getServer('My Plex Server', {
+  address: /192\.168\.1\.\d+/, // Match any IP in 192.168.1.x range
+  protocol: /^https?$/, // Match http or https
+  port: /^324\d+$/, // Match ports starting with 324
+})
+
+// Mixed exact and regex matching
+const server = await client.getServer('My Plex Server', {
+  local: true, // Exact boolean match
+  address: /192\.168\.\d+\.\d+/, // Regex for local network IPs
+  protocol: 'https', // Exact protocol match
+})
+
+// Partial string matching with regex
+const server = await client.getServer('My Plex Server', {
+  address: /example\.com/, // Match any address containing 'example.com'
+  uri: /https:\/\/.*\.local/, // Match HTTPS URIs ending with '.local'
+})
+```
+
+**Available filter properties:**
+
+- `address` - Server address (supports regex patterns)
+- `protocol` - Connection protocol (http/https)
+- `port` - Port number
+- `uri` - Full connection URI
+- `local` - Whether connection is local
+- `relay` - Whether connection uses relay
+- `IPv6` - Whether connection uses IPv6
+
 ## Usage Examples
 
 ### Search for a specific movie
@@ -331,7 +374,7 @@ const client = new PlexClient(token: string, {
 #### Methods
 
 - `getResources(): Promise<PlexResource[]>` - Get available Plex servers
-- `getServer(resourceName: string, connectionsFilter?: Partial<PlexConnection>): Promise<PlexServer>` - Create a server instance
+- `getServer(resourceName: string, connectionsFilter?: PlexConnectionFilter): Promise<PlexServer>` - Create a server instance with advanced filtering
 
 ### PlexServer
 
@@ -364,6 +407,22 @@ Provides access to the media library.
 interface SearchParams {
   query: string // Search query (required)
   searchTypes: SearchType[] // Types to search (MOVIES, TV, etc.)
+}
+```
+
+### Connection Filtering
+
+```typescript
+type PlexConnectionFilter = Partial<{
+  [K in keyof PlexConnection]: PlexConnection[K] | RegExp
+}>
+
+// Example usage:
+const filter: PlexConnectionFilter = {
+  address: /192\.168\.1\.\d+/, // Regex pattern
+  protocol: 'https', // Exact match
+  local: true, // Boolean match
+  port: /^324\d+$/, // Regex pattern
 }
 ```
 
