@@ -1,3 +1,10 @@
+# [4.3.0](https://github.com/nass600/plex-sdk/compare/v4.2.0...v4.3.0) (2025-09-08)
+
+
+### Features
+
+* improved connection filtering by allowing regexp ([772cd45](https://github.com/nass600/plex-sdk/commit/772cd4527cfbbd6c6933adf306df6face78a139d))
+
 # [4.2.0](https://github.com/nass600/plex-sdk/compare/v4.1.4...v4.2.0) (2025-08-27)
 
 
