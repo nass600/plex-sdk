@@ -1,4 +1,4 @@
-import { PlexConnection, PlexResource, PlexClientOptions } from '../types'
+import { PlexConnectionFilter, PlexResource, PlexClientOptions } from '../types'
 import { PlexServer } from './PlexServer'
 
 export class PlexClient {
@@ -51,7 +51,7 @@ export class PlexClient {
    */
   async getServer(
     resourceName: string,
-    connectionsFilter?: Partial<PlexConnection>
+    connectionsFilter?: PlexConnectionFilter
   ): Promise<PlexServer> {
     const resources = await this.fetchResources()
 

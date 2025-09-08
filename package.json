@@ -20,7 +20,7 @@
     "lint": "eslint . --ext ts,js --fix",
     "format": "prettier --write . --list-different",
     "prepare": "husky",
-    "prepublishOnly": "npm run build",
+    "prepack": "npm run build",
     "test": "vitest run --coverage",
     "type-check": "tsc --noEmit"
   },
@@ -65,5 +65,10 @@
   },
   "overrides": {
     "tmp": "^0.2.3"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
 }
