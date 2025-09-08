@@ -1,3 +1,10 @@
+## [4.3.1](https://github.com/nass600/plex-sdk/compare/v4.3.0...v4.3.1) (2025-09-08)
+
+
+### Bug Fixes
+
+* fixing types not being built when publishing ([176302d](https://github.com/nass600/plex-sdk/commit/176302d4c96ccdadf252725790e6f8865723fd33))
+
 # [4.3.0](https://github.com/nass600/plex-sdk/compare/v4.2.0...v4.3.0) (2025-09-08)
 
 
