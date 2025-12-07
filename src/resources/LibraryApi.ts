@@ -1,5 +1,5 @@
 import { BaseResource } from '@/core/BaseResource'
-import normalizeText from 'normalize-text'
+import { normalizeQuery } from '@/utils/normalize'
 import { Directory, Metadata, SearchResult } from '@/types'
 
 export enum SearchType {
@@ -64,18 +64,28 @@ export class LibraryApi extends BaseResource {
       throw new Error('Query parameter is mandatory and must be a non-empty string')
     }
 
-    // Normalize the query text
+    // Normalize the query text (removes colons, parentheses, triple dots, etc.)
     const normalizedParams = {
       ...params,
-      query: normalizeText(params.query.replace('...', '').trim()),
+      query: normalizeQuery(params.query),
     }
 
-    return this.get<SearchResult[], LibrarySearchRequestParams>(
-      '/library/search',
-      'MediaContainer.SearchResult',
-      [],
-      normalizedParams
-    )
+    try {
+      return await this.get<SearchResult[], LibrarySearchRequestParams>(
+        '/library/search',
+        'MediaContainer.SearchResult',
+        [],
+        normalizedParams
+      )
+    } catch (error) {
+      // Handle 500 errors (e.g., when query contains problematic characters) by returning empty results
+      // This happens when Plex API returns HTML instead of JSON
+      if (error instanceof Error) {
+        return []
+      }
+      // Re-throw other errors
+      throw error
+    }
   }
 
   async allItems(id: number, params?: LibraryAllItemsRequestParams): Promise<Metadata[]> {
