@@ -1,3 +1,10 @@
+## [4.3.2](https://github.com/nass600/plex-sdk/compare/v4.3.1...v4.3.2) (2025-12-07)
+
+
+### Bug Fixes
+
+* fixed query with special chars throwing 500 ([8c746d2](https://github.com/nass600/plex-sdk/commit/8c746d203f5f7230d4a3ed1cc20ef12866355107))
+
 ## [4.3.1](https://github.com/nass600/plex-sdk/compare/v4.3.0...v4.3.1) (2025-09-08)
 
 
