@@ -1,3 +1,10 @@
+## [4.3.3](https://github.com/nass600/plex-sdk/compare/v4.3.2...v4.3.3) (2026-01-25)
+
+
+### Bug Fixes
+
+* improved stream typing definition ([45ad531](https://github.com/nass600/plex-sdk/commit/45ad5315909896ac13d8a5c3a2f0496eadef3e89))
+
 ## [4.3.2](https://github.com/nass600/plex-sdk/compare/v4.3.1...v4.3.2) (2025-12-07)
 
 
