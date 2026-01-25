@@ -9,7 +9,7 @@ interface BaseStream {
   streamType: StreamType
   codec: string
   index: number
-  bitrate: number
+  bitrate?: number
   displayTitle: string
   extendedDisplayTitle: string
 }
@@ -36,18 +36,27 @@ export interface VideoStream extends BaseStream {
   profile: string
   refFrames: number
   width: number
+  DOVIPresent?: boolean
+  DOVIProfile?: number
+  DOVILevel?: number
+  DOVIVersion?: string
+  DOVIBLPresent?: boolean
+  DOVIBLCompatID?: number
+  DOVIELPresent?: boolean
+  DOVIRPUPresent?: boolean
 }
 
 export interface AudioStream extends BaseStream, StreamLanguageInfo {
-  selected: boolean
+  selected?: boolean
   channels: number
   audioChannelLayout: string
   samplingRate: number
 }
 
 export interface SubtitleStream extends BaseStream, StreamLanguageInfo {
-  selected: boolean
+  selected?: boolean
   canAutoSync: boolean
+  forced?: boolean
 }
 
 export type Stream = VideoStream | AudioStream | SubtitleStream
