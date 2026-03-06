@@ -1,3 +1,10 @@
+## [4.3.5](https://github.com/nass600/plex-sdk/compare/v4.3.4...v4.3.5) (2026-03-06)
+
+
+### Bug Fixes
+
+* bumped all deps and fixed secvuls ([883cb98](https://github.com/nass600/plex-sdk/commit/883cb98737e7e27bee67b9fcedbec400e88a13d9))
+
 ## [4.3.4](https://github.com/nass600/plex-sdk/compare/v4.3.3...v4.3.4) (2026-03-06)
 
 
