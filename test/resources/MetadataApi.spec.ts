@@ -1,6 +1,8 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { MetadataApi } from '@/index'
 import { PlexServerContext } from '@/types'
+import { server } from '../setup'
+import { http, HttpResponse } from 'msw'
 
 describe('Metadata', () => {
   let metadata: MetadataApi
@@ -53,10 +55,57 @@ describe('Metadata', () => {
       expect(result).toHaveProperty('type')
     })
 
-    it('should return undefined when no metadata is found', async () => {
+    it('should return undefined when Plex returns 200 with empty MediaContainer', async () => {
       const result = await metadata.one('999999')
 
       expect(result).toBeUndefined()
+    })
+
+    it('should throw on 404 Not Found (HTML response body)', async () => {
+      server.use(
+        http.get('*/library/metadata/:id', () => {
+          return new HttpResponse(
+            '<html><head><title>Not Found</title></head><body><h1>404 Not Found</h1></body></html>',
+            {
+              status: 404,
+              statusText: 'Not Found',
+              headers: { 'Content-Type': 'text/html' },
+            }
+          )
+        })
+      )
+
+      await expect(metadata.one('123')).rejects.toThrow('Plex API error: 404 Not Found')
+    })
+
+    it('should throw on 429 Too Many Requests', async () => {
+      server.use(
+        http.get('*/library/metadata/:id', () => {
+          return new HttpResponse(null, { status: 429, statusText: 'Too Many Requests' })
+        })
+      )
+
+      await expect(metadata.one('123')).rejects.toThrow('Plex API error: 429 Too Many Requests')
+    })
+
+    it('should throw on 500 Internal Server Error', async () => {
+      server.use(
+        http.get('*/library/metadata/:id', () => {
+          return new HttpResponse(null, { status: 500, statusText: 'Internal Server Error' })
+        })
+      )
+
+      await expect(metadata.one('123')).rejects.toThrow('Plex API error: 500 Internal Server Error')
+    })
+
+    it('should throw on 503 Service Unavailable', async () => {
+      server.use(
+        http.get('*/library/metadata/:id', () => {
+          return new HttpResponse(null, { status: 503, statusText: 'Service Unavailable' })
+        })
+      )
+
+      await expect(metadata.one('123')).rejects.toThrow('Plex API error: 503 Service Unavailable')
     })
   })
 })

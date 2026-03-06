@@ -23,6 +23,10 @@ export abstract class BaseResource {
       headers: this.ctx.headers,
     })
 
+    if (!res.ok) {
+      throw new Error(`Plex API error: ${res.status} ${res.statusText}`)
+    }
+
     const contentType = res.headers.get('content-type')
     if (!contentType?.includes('application/json')) {
       throw new Error(`Expected JSON but got ${contentType}`)
