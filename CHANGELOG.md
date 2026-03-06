@@ -1,3 +1,13 @@
+## [4.3.4](https://github.com/nass600/plex-sdk/compare/v4.3.3...v4.3.4) (2026-03-06)
+
+
+### Bug Fixes
+
+* bumping semantic release ([ff861f5](https://github.com/nass600/plex-sdk/commit/ff861f59013191712c9608c4ffc8c0bb1dcfa52a))
+* handling html 404s ([0cadea1](https://github.com/nass600/plex-sdk/commit/0cadea13ca6dbbc3663e90246cf8d6b838dcc4b2))
+* simplified release pipeline ([3de0b4c](https://github.com/nass600/plex-sdk/commit/3de0b4c722d911fd8587207ac195934a289ec94d))
+* trying trusted ci auth ([6fc3e12](https://github.com/nass600/plex-sdk/commit/6fc3e128927bf231b8f6f0e854d6174f8051937a))
+
 ## [4.3.3](https://github.com/nass600/plex-sdk/compare/v4.3.2...v4.3.3) (2026-01-25)
 
 
