@@ -72,13 +72,13 @@ This SDK simplifies Plex API responses by automatically extracting the relevant 
 
 **After (Simplified SDK Response):**
 
-```typescript
-;[
+```json
+[
   {
-    title: 'Movies',
-    type: 'movie',
-    key: '/library/sections/1',
-  },
+    "title": "Movies",
+    "type": "movie",
+    "key": "/library/sections/1"
+  }
 ]
 ```
 

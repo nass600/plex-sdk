@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022", "DOM"],
-    "types": ["vitest/globals"],
+    "lib": ["ES2022", "ESNext.Disposable", "DOM"],
+    "types": ["vitest/globals", "node"],
     "sourceMap": true,
     "allowJs": false,
     "noEmit": true, // keep this; tsup handles emitting
