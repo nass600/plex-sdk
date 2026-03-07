@@ -1,6 +1,7 @@
 import { PlexServerContext } from '@/types'
 import queryString from 'query-string'
 import { get } from 'lodash-es'
+import { PlexApiError } from './PlexApiError'
 
 export abstract class BaseResource {
   constructor(protected ctx: PlexServerContext) {}
@@ -24,7 +25,7 @@ export abstract class BaseResource {
     })
 
     if (!res.ok) {
-      throw new Error(`Plex API error: ${res.status} ${res.statusText}`)
+      throw new PlexApiError(res.status, res.statusText)
     }
 
     const contentType = res.headers.get('content-type')

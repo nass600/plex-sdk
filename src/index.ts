@@ -1,6 +1,7 @@
 // Core
 export { PlexClient } from './core/PlexClient'
 export { PlexServer } from './core/PlexServer'
+export { PlexApiError } from './core/PlexApiError'
 
 // Resources
 export { HubsApi } from './resources/HubsApi'
