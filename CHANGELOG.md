@@ -1,3 +1,10 @@
+# [4.4.0](https://github.com/nass600/plex-sdk/compare/v4.3.5...v4.4.0) (2026-03-07)
+
+
+### Features
+
+* improved error management ([d79fc17](https://github.com/nass600/plex-sdk/commit/d79fc177d62824f5626d4194e4d76bf83f32d55e))
+
 ## [4.3.5](https://github.com/nass600/plex-sdk/compare/v4.3.4...v4.3.5) (2026-03-06)
 
 
