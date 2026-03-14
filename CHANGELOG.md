@@ -1,3 +1,10 @@
+## [4.4.2](https://github.com/nass600/plex-sdk/compare/v4.4.1...v4.4.2) (2026-03-14)
+
+
+### Bug Fixes
+
+* restored type-check ([a50d306](https://github.com/nass600/plex-sdk/commit/a50d306e45fb208aab0c6473b2ef30bbc49d2c94))
+
 ## [4.4.1](https://github.com/nass600/plex-sdk/compare/v4.4.0...v4.4.1) (2026-03-14)
 
 
