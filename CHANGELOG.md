@@ -1,3 +1,10 @@
+## [4.4.1](https://github.com/nass600/plex-sdk/compare/v4.4.0...v4.4.1) (2026-03-14)
+
+
+### Bug Fixes
+
+* bumped deps and ci work ([c175490](https://github.com/nass600/plex-sdk/commit/c1754908e6bf628dbb0f9c76b22b89359fb4ee2b))
+
 # [4.4.0](https://github.com/nass600/plex-sdk/compare/v4.3.5...v4.4.0) (2026-03-07)
 
 
