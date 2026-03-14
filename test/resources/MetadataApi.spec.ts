@@ -112,4 +112,87 @@ describe('Metadata', () => {
       )
     })
   })
+
+  describe('children', () => {
+    it('should get children metadata for a specific item', async () => {
+      const result = await metadata.children('123')
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result?.length).toBeGreaterThan(0)
+      expect(result?.[0]).toHaveProperty('title')
+      expect(result?.[0]).toHaveProperty('type')
+      expect(result?.[0]).toHaveProperty('ratingKey')
+      expect(result?.[0]).toHaveProperty('guid')
+    })
+
+    it('should return children with correct structure', async () => {
+      const result = await metadata.children('123')
+
+      const first = result?.[0]
+      expect(first).toHaveProperty('title')
+      expect(first).toHaveProperty('type')
+      expect(first).toHaveProperty('ratingKey')
+      expect(first).toHaveProperty('key')
+    })
+
+    it('should return empty array when no children are found', async () => {
+      const result = await metadata.children('999')
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result).toHaveLength(0)
+    })
+
+    it('should throw PlexApiError with status 404 on Not Found', async () => {
+      server.use(
+        http.get('*/library/metadata/:id/children', () => {
+          return new HttpResponse(null, { status: 404, statusText: 'Not Found' })
+        })
+      )
+
+      await expect(metadata.children('123')).rejects.toSatisfy(
+        e => e instanceof PlexApiError && e.status === 404
+      )
+    })
+  })
+
+  describe('leaves', () => {
+    it('should get leaves (allLeaves) for a specific item', async () => {
+      const result = await metadata.leaves('123')
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result?.length).toBeGreaterThan(0)
+      expect(result?.[0]).toHaveProperty('title')
+      expect(result?.[0]).toHaveProperty('type')
+      expect(result?.[0]).toHaveProperty('ratingKey')
+    })
+
+    it('should return leaves with correct structure', async () => {
+      const result = await metadata.leaves('123')
+
+      const first = result?.[0]
+      expect(first).toHaveProperty('title')
+      expect(first).toHaveProperty('type')
+      expect(first).toHaveProperty('ratingKey')
+      expect(first).toHaveProperty('key')
+    })
+
+    it('should return empty array when no leaves are found', async () => {
+      const result = await metadata.leaves('999')
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result).toHaveLength(0)
+    })
+
+    it('should throw PlexApiError with status 404 on Not Found', async () => {
+      server.use(
+        http.get('*/library/metadata/:id/allLeaves', () => {
+          return new HttpResponse(null, { status: 404, statusText: 'Not Found' })
+        })
+      )
+
+      await expect(metadata.leaves('123')).rejects.toSatisfy(
+        e => e instanceof PlexApiError && e.status === 404
+      )
+    })
+  })
 })

@@ -64,6 +64,42 @@ export const server = setupServer(
     return HttpResponse.json(loadMock('metadata.one.200.json'))
   }),
 
+  http.get('*/library/metadata/:id/children', ({ params }) => {
+    if (params.id === '999') {
+      return HttpResponse.json({
+        MediaContainer: {
+          size: 0,
+          allowSync: true,
+          identifier: 'com.plexapp.plugins.library',
+          librarySectionID: 2,
+          librarySectionTitle: 'Movies',
+          librarySectionUUID: '2f007be0-4b60-4676-8c46-4b754ae90122',
+          mediaTagPrefix: '/system/bundle/media/flags/',
+          mediaTagVersion: 1579823211,
+        },
+      })
+    }
+    return HttpResponse.json(loadMock('library.allItems.200.json'))
+  }),
+
+  http.get('*/library/metadata/:id/allLeaves', ({ params }) => {
+    if (params.id === '999') {
+      return HttpResponse.json({
+        MediaContainer: {
+          size: 0,
+          allowSync: true,
+          identifier: 'com.plexapp.plugins.library',
+          librarySectionID: 2,
+          librarySectionTitle: 'Movies',
+          librarySectionUUID: '2f007be0-4b60-4676-8c46-4b754ae90122',
+          mediaTagPrefix: '/system/bundle/media/flags/',
+          mediaTagVersion: 1579823211,
+        },
+      })
+    }
+    return HttpResponse.json(loadMock('library.allItems.200.json'))
+  }),
+
   http.get('*/library/search', ({ request }) => {
     const url = new URL(request.url)
     const query = url.searchParams.get('query')

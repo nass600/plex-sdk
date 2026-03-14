@@ -1,0 +1,38 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: 'Europe/Madrid'
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - 'version-update:semver-major'
+      - dependency-name: 'lodash'
+        # No patched version exists (latest 4.17.21). Only used by dev tooling — no impact on library consumers.
+    groups:
+      dev-dependencies:
+        dependency-type: 'development'
+    commit-message:
+      prefix: 'fix'
+      prefix-development: 'chore'
+      include: 'scope'
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: 'Europe/Madrid'
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          - 'version-update:semver-major'
+    commit-message:
+      prefix: 'ci'
+      include: 'scope'
