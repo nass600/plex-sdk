@@ -94,6 +94,12 @@ export interface Metadata {
   ratingImage: string
   index?: number
   parentIndex?: number
+  parentRatingKey?: string
+  grandparentRatingKey?: string
+  grandparentTitle?: string
+  grandparentGuid?: string
+  childCount?: number
+  leafCount?: number
   Image: Image[]
   UltraBlurColors: {
     topLeft: string
