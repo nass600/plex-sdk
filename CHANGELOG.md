@@ -1,3 +1,16 @@
+# [4.5.0](https://github.com/nass600/plex-sdk/compare/v4.4.2...v4.5.0) (2026-05-12)
+
+
+### Bug Fixes
+
+* **deps:** bump lodash-es from 4.17.23 to 4.18.1 ([e906d0c](https://github.com/nass600/plex-sdk/commit/e906d0c516e405965aa746a2e44e2c36277644bb))
+* **deps:** bump vite from 7.3.1 to 8.0.5 ([e1e4739](https://github.com/nass600/plex-sdk/commit/e1e47398175e68e3087e11012abc64bb8709bdd0))
+
+
+### Features
+
+* add episode/show parent fields to Metadata interface ([46cfb44](https://github.com/nass600/plex-sdk/commit/46cfb44bc57800510adafcf4d795184395b14f9c))
+
 ## [4.4.2](https://github.com/nass600/plex-sdk/compare/v4.4.1...v4.4.2) (2026-03-14)
 
 
