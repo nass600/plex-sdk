@@ -155,6 +155,52 @@ describe('Metadata', () => {
     })
   })
 
+  describe('many', () => {
+    it('should return an array of Metadata for multiple IDs', async () => {
+      const result = await metadata.many(['2024', '63152'])
+
+      expect(Array.isArray(result)).toBe(true)
+      expect(result).toHaveLength(2)
+      expect(result[0]).toHaveProperty('ratingKey', '2024')
+      expect(result[1]).toHaveProperty('ratingKey', '63152')
+    })
+
+    it('should return empty array immediately for empty input without making a request', async () => {
+      server.use(
+        http.get('*/library/metadata/:id', () => {
+          throw new Error('should not be called for empty input')
+        })
+      )
+
+      const result = await metadata.many([])
+      expect(result).toEqual([])
+    })
+
+    it('should throw PlexApiError with status 429 on Too Many Requests', async () => {
+      server.use(
+        http.get('*/library/metadata/:id', () => {
+          return new HttpResponse(null, { status: 429, statusText: 'Too Many Requests' })
+        })
+      )
+
+      await expect(metadata.many(['1', '2'])).rejects.toSatisfy(
+        e => e instanceof PlexApiError && e.status === 429
+      )
+    })
+
+    it('should throw PlexApiError with status 500 on Internal Server Error', async () => {
+      server.use(
+        http.get('*/library/metadata/:id', () => {
+          return new HttpResponse(null, { status: 500, statusText: 'Internal Server Error' })
+        })
+      )
+
+      await expect(metadata.many(['1', '2'])).rejects.toSatisfy(
+        e => e instanceof PlexApiError && e.status === 500
+      )
+    })
+  })
+
   describe('leaves', () => {
     it('should get leaves (allLeaves) for a specific item', async () => {
       const result = await metadata.leaves('123')

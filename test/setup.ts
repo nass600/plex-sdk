@@ -46,8 +46,13 @@ export const server = setupServer(
   }),
 
   http.get('*/library/metadata/:id', ({ params }) => {
+    const id = params.id as string
+    // Multi-item request — comma-separated IDs
+    if (id.includes(',')) {
+      return HttpResponse.json(loadMock('library.getMetadataMultiple.200.json'))
+    }
     // Return empty response for non-existent metadata (ID 999999)
-    if (params.id === '999999') {
+    if (id === '999999') {
       return HttpResponse.json({
         MediaContainer: {
           size: 0,
