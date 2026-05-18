@@ -1,3 +1,10 @@
+# [4.6.0](https://github.com/nass600/plex-sdk/compare/v4.5.0...v4.6.0) (2026-05-18)
+
+
+### Features
+
+* add MetadataApi.many() for multi-item metadata fetch ([f6676d6](https://github.com/nass600/plex-sdk/commit/f6676d6d440532db70b4dc1ac8380ca685dbfeab))
+
 # [4.5.0](https://github.com/nass600/plex-sdk/compare/v4.4.2...v4.5.0) (2026-05-12)
 
 
